@@ -1,0 +1,2542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SISMUN — Stonehill International School Model United Nations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --red: #C0272D;
+      --red-dark: #8B1A1F;
+      --red-light: #E8444A;
+      --red-pale: #FDECEA;
+      --white: #FFFFFF;
+      --off-white: #FAF8F6;
+      --gray-100: #F2EFEb;
+      --gray-200: #E0DBD5;
+      --gray-400: #9D968E;
+      --gray-700: #3D3730;
+      --gray-900: #1A1512;
+      --gold: #C9A84C;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--off-white);
+      color: var(--gray-900);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 1px solid var(--gray-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      height: 68px;
+    }
+
+    .nav-logo {
+      margin-left: -0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .nav-logo-mark {
+      width: auto;
+      height: 40px;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-mark img {
+      display: block;
+      max-height: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-logo-text strong {
+      font-family: 'Playfair Display', serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--red);
+      letter-spacing: 0.03em;
+    }
+
+    .nav-logo-text small {
+      font-size: 9px;
+      font-weight: 500;
+      color: var(--gray-400);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--gray-700);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      padding-bottom: 2px;
+      border-bottom: 2px solid transparent;
+      transition: color 0.2s, border-color 0.2s;
+      cursor: pointer;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--red);
+      border-color: var(--red);
+    }
+
+    .nav-cta {
+      background: var(--red);
+      color: var(--white) !important;
+      padding: 8px 20px;
+      padding-bottom: 100px;
+      ;
+      border-radius: 4px;
+      border-bottom: none !important;
+      transition: background 0.2s !important;
+
+    }
+
+    .nav-cta:hover {
+      background: var(--red-dark) !important;
+    }
+
+    #nav-register {
+      padding-bottom: 6px !important;
+    }
+
+    /* PAGES */
+    .page {
+      display: none;
+      padding-top: 68px;
+      min-height: 100vh;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* ── HOME PAGE ── */
+    .hero {
+      background: var(--red);
+      position: relative;
+      overflow: hidden;
+      min-height: 92vh;
+      display: grid;
+      grid-template-columns: minmax(340px, 1fr) minmax(420px, 1.3fr);
+      gap: 2rem;
+      align-items: start;
+      padding: 3.5rem 3rem 4rem;
+    }
+
+    .hero-content {
+      max-width: 560px;
+      z-index: 1;
+    }
+
+    .hero-image {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: 40px;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: auto;
+      max-height: 720px;
+      object-fit: cover;
+      border-radius: 20px;
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.18);
+      display: block;
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image: radial-gradient(circle, #fff 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+
+    .hero-line-dec {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 40%;
+      height: 100%;
+      border-left: 1px solid rgba(255, 255, 255, 0.15);
+      pointer-events: none;
+    }
+
+    .hero-sub {
+      font-size: 12px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.0;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.5rem;
+      max-width: 700px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.82);
+      max-width: 480px;
+      line-height: 1.65;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--red);
+      padding: 14px 32px;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 14px 32px;
+      border-radius: 4px;
+      border: 1.5px solid rgba(255, 255, 255, 0.5);
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .theme-section {
+      background: var(--off-white);
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 1.25rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+    }
+
+    .theme-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 0.35rem;
+    }
+
+    .theme-word {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+
+    .theme-quote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.6rem, 4vw, 3.8rem);
+      font-weight: 700;
+      font-style: italic;
+      color: var(--gray-900);
+      line-height: 1.25;
+      border-left: 4px solid var(--red);
+      padding-left: 1.5rem;
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      .theme-section {
+        padding: 1.25rem 1.5rem;
+      }
+    }
+
+    .hero-scroll {
+      position: absolute;
+      bottom: 2.5rem;
+      left: 3rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .hero-scroll-line {
+      width: 40px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.4);
+    }
+
+    .hero-year {
+      position: absolute;
+      bottom: 2rem;
+      right: 3rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 100px;
+      font-weight: 900;
+      line-height: 1;
+      color: rgba(255, 255, 255, 0.07);
+      letter-spacing: -4px;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .section {
+      padding: 5rem 3rem;
+    }
+
+    .section-label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.15;
+      color: var(--gray-900);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-title em {
+      font-style: italic;
+      color: var(--red);
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1px;
+      background: var(--gray-200);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 2rem 0 2rem;
+    }
+
+    .stat {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-top: 6px;
+      letter-spacing: 0.03em;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--gray-200);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .info-card {
+      background: var(--white);
+      padding: 2.5rem;
+    }
+
+    .info-card-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--red-pale);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .info-card-icon svg {
+      width: 22px;
+      height: 22px;
+      stroke: var(--red);
+      fill: none;
+      stroke-width: 1.8;
+    }
+
+    .info-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem;
+      margin-bottom: 0.6rem;
+      color: var(--gray-900);
+    }
+
+    .info-card p {
+      font-size: 14px;
+      color: var(--gray-400);
+      line-height: 1.7;
+    }
+
+    .quote-section {
+      background: var(--red);
+      padding: 5rem 3rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quote-section::before {
+      content: '"';
+      position: absolute;
+      top: -1rem;
+      left: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 18rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.06);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: var(--white);
+      font-style: italic;
+      max-width: 700px;
+      line-height: 1.5;
+      margin-bottom: 1.5rem;
+    }
+
+    .quote-attr {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── ABOUT PAGE ── */
+    .about-hero {
+      background: var(--gray-900);
+      padding: 5rem 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .about-hero::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--red);
+      z-index: 2;
+    }
+
+    .about-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .about-image {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+
+    }
+
+    .about-image img {
+      width: 100%;
+      height: auto;
+      max-height: 600px;
+      object-fit: cover;
+      border-radius: 16px;
+      display: block;
+    }
+
+    .about-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900;
+      color: var(--white);
+      max-width: 500px;
+      line-height: 1.1;
+    }
+
+    .about-hero p {
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 480px;
+      line-height: 1.7;
+      margin-top: 1.5rem;
+      font-weight: 300;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .letter-section {
+      padding-top: 3rem;
+      padding-bottom: 5rem;
+    }
+
+    .letter-grid {
+      display: grid;
+      grid-template-columns: 3fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .letter-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .letter-image {
+      width: 100%;
+      max-width: 1000px;
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 320px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gray-100);
+      margin-left: auto;
+    }
+
+    .letter-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .body-text p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--gray-700);
+      margin-bottom: 1.25rem;
+    }
+
+    .body-text p:last-child {
+      margin-bottom: 0;
+    }
+
+    .red-card {
+      background: var(--red);
+      border-radius: 8px;
+      padding: 2.5rem;
+      color: var(--white);
+    }
+
+    .red-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .red-card p {
+      font-size: 14px;
+      line-height: 1.75;
+      opacity: 0.85;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .team-grid-two {
+      grid-template-columns: repeat(2, 1fr);
+      height: 3rem;
+      margin-bottom: 8rem;
+    }
+
+    .team-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.75rem;
+      text-align: center;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .team-card:hover {
+      border-color: var(--red);
+      transform: translateY(-3px);
+    }
+
+    .team-avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: var(--red);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .team-card h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .team-card small {
+      font-size: 12px;
+      color: var(--red);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    .team-card p {
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-top: 8px;
+      line-height: 1.55;
+    }
+
+    /* ── COMMITTEES PAGE ── */
+    .page-banner {
+      background: linear-gradient(135deg, #F5F5F0 0%, #EFE9E0 100%);
+      border-bottom: none;
+      padding: 5rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: -8%;
+      width: 45%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(192, 39, 45, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+      border-radius: 50%;
+    }
+
+    .page-banner::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: var(--red);
+    }
+
+    .page-banner>div:first-child {
+      position: relative;
+      z-index: 1;
+    }
+
+    .page-banner h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--gray-900);
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+    }
+
+    .page-banner p {
+      font-size: 15px;
+      color: var(--gray-700);
+      max-width: 450px;
+      margin-top: 0.75rem;
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .committee-list {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5px;
+    }
+
+    .committee-item {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .committee-item:hover {
+      border-color: var(--red);
+    }
+
+    .committee-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+    }
+
+    .committee-tag {
+      width: 56px;
+      height: 56px;
+      border-radius: 8px;
+      background: var(--red);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.04em;
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .committee-info {
+      flex: 1;
+    }
+
+    .committee-info h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .committee-info p {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    .committee-meta {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: var(--gray-100);
+      color: var(--gray-700);
+    }
+
+    .tag.beginner {
+      background: #E8F5E9;
+      color: #2E7D32;
+    }
+
+    .tag.intermediate {
+      background: #FFF3E0;
+      color: #E65100;
+    }
+
+    .tag.advanced {
+      background: #FDECEA;
+      color: var(--red);
+    }
+
+    .committee-body {
+      display: none;
+      padding: 0 2rem 1.75rem 5.5rem;
+    }
+
+    .committee-body.open {
+      display: block;
+    }
+
+    .committee-body h4 {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .committee-body p {
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--gray-700);
+      margin-bottom: 1.25rem;
+    }
+
+    .committee-body ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .committee-body ul li {
+      background: var(--gray-100);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 12px;
+      color: var(--gray-700);
+      font-weight: 500;
+    }
+
+    /* ── REGISTRATION PAGE ── */
+    .reg-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 68px);
+    }
+
+    .reg-info {
+      background: var(--red);
+      padding: 4rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reg-info::before {
+      content: '';
+      position: absolute;
+      bottom: -6rem;
+      right: -6rem;
+      width: 20rem;
+      height: 20rem;
+      border: 40px solid rgba(255, 255, 255, 0.06);
+      border-radius: 50%;
+    }
+
+    .reg-info h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 1.5rem;
+    }
+
+    .reg-info>p {
+      font-size: 15px;
+      color: rgba(255, 255, 255, 0.75);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    .reg-timeline {
+      margin-top: 3rem;
+    }
+
+    .reg-timeline h3 {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1.25rem;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      align-items: flex-start;
+    }
+
+    .tl-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    .tl-dot.done {
+      background: var(--white);
+    }
+
+    .timeline-item div small {
+      font-size: 11px;
+      color: rgba(255, 255, 255, 0.5);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .timeline-item div span {
+      font-size: 14px;
+      color: var(--white);
+      font-weight: 500;
+    }
+
+    .reg-form-wrap {
+      background: var(--off-white);
+      padding: 4rem 3rem;
+      overflow-y: auto;
+    }
+
+    .reg-form-wrap h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 2rem;
+      color: var(--gray-900);
+    }
+
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-700);
+      margin-bottom: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      background: var(--white);
+      color: var(--gray-900);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--red);
+      box-shadow: 0 0 0 3px rgba(192, 39, 45, 0.1);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 14px;
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      border-radius: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 0.5rem;
+    }
+
+    .submit-btn:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    .submit-btn:active {
+      transform: translateY(0);
+    }
+
+    .form-note {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-top: 1rem;
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--gray-900);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 2rem 3rem 1.25rem;
+      text-align: center;
+    }
+
+    footer .f-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.03em;
+      margin-bottom: 0.35rem;
+    }
+
+    footer .f-logo span {
+      color: var(--red);
+    }
+
+    footer p {
+      font-size: 13px;
+      line-height: 1.7;
+      margin: 0.2rem 0;
+    }
+
+    footer .f-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.75rem;
+      margin: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    footer .f-links a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+
+    footer .f-links a:hover {
+      color: var(--red);
+    }
+
+    footer .f-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.08);
+      margin: 1rem 0;
+    }
+
+    footer .f-copy {
+      font-size: 12px;
+      margin-bottom: 0;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(24px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .page.active .hero h1,
+    .page.active .hero p,
+    .page.active .hero-btns {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .page.active .hero p {
+      animation-delay: 0.1s;
+    }
+
+    .page.active .hero-btns {
+      animation-delay: 0.2s;
+    }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      padding: 2rem;
+      background: #E8F5E9;
+      border-radius: 8px;
+      border: 1px solid #A5D6A7;
+      color: #2E7D32;
+      font-size: 15px;
+      line-height: 1.7;
+      margin-top: 1rem;
+    }
+
+    .btn-view-committee {
+      background: var(--red);
+      color: var(--white);
+      border: none;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-view-committee:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    /* SOCHUM page */
+    .committee-page-hero {
+      background: var(--gray-900);
+      padding: 5rem 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 4px solid var(--red);
+    }
+
+    .committee-page-hero .breadcrumb {
+      font-size: 12px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-bottom: 1.5rem;
+      cursor: pointer;
+    }
+
+    .committee-page-hero .breadcrumb span {
+      color: var(--red);
+    }
+
+    .committee-page-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 4vw, 3.2rem);
+      font-weight: 700;
+      color: var(--white);
+      max-width: 750px;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+
+    .committee-page-hero .agenda-label {
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.5);
+      line-height: 1.6;
+      max-width: 650px;
+      font-style: italic;
+    }
+
+    .committee-pills {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 1.75rem;
+    }
+
+    .committee-pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+    .committee-pill.red {
+      background: var(--red);
+      border-color: var(--red);
+      color: white;
+    }
+
+    .cp-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 2rem;
+      padding: 3rem;
+      align-items: start;
+    }
+
+    .cp-main {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .cp-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .cp-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 2rem;
+    }
+
+    .cp-card h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--gray-900);
+      margin-bottom: 1rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .cp-card p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--gray-700);
+      margin-bottom: 0.75rem;
+    }
+
+    .cp-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .cp-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .cp-card ul li {
+      font-size: 14px;
+      color: var(--gray-700);
+      padding: 8px 12px;
+      background: var(--gray-100);
+      border-radius: 4px;
+      line-height: 1.5;
+    }
+
+    .cp-card ul li::before {
+      content: '→ ';
+      color: var(--red);
+      font-weight: 700;
+    }
+
+    .cp-sidebar-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+
+    .cp-sidebar-card h4 {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .cp-sidebar-card p {
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    .cp-sidebar-card .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gray-100);
+      font-size: 13px;
+    }
+
+    .cp-sidebar-card .detail-row:last-child {
+      border-bottom: none;
+    }
+
+    .cp-sidebar-card .detail-row span:first-child {
+      color: var(--gray-400);
+    }
+
+    .cp-sidebar-card .detail-row span:last-child {
+      color: var(--gray-900);
+      font-weight: 600;
+    }
+
+    .rop-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .rop-item {
+      background: var(--gray-100);
+      border-radius: 6px;
+      padding: 1rem;
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.5;
+    }
+
+    .rop-item strong {
+      display: block;
+      color: var(--gray-900);
+      margin-bottom: 3px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 768px) {
+      .cp-grid {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        padding: 0 1.25rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        display: block;
+        padding: 4rem 1.5rem 3rem;
+      }
+
+      .hero-image {
+        margin-top: 2rem;
+      }
+
+      .section {
+        padding: 3rem 1.5rem;
+      }
+
+      .two-col,
+      .info-grid,
+      .reg-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .about-hero {
+        padding: 3rem 1.5rem;
+      }
+
+      .page-banner,
+      .committee-list,
+      .reg-info,
+      .reg-form-wrap {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+
+      .quote-section {
+        padding: 3rem 1.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="nav-logo" onclick="showPage('home')">
+      <div class="nav-logo-mark"><img src="images/logo.png" alt="SISMUN logo"></div>
+      <div class="nav-logo-text">
+        <strong>SISMUN</strong>
+        <small>Stonehill International School</small>
+      </div>
+    </div>
+    <div class="nav-links">
+      <a onclick="showPage('home')" class="active" id="nav-home">Home</a>
+      <a onclick="showPage('about')" id="nav-about">About</a>
+      <a onclick="showPage('committees')" id="nav-committees">Committees</a>
+      <a onclick="showPage('register')" class="nav-cta" id="nav-register">Register</a>
+    </div>
+  </nav>
+
+  <!-- ────────── HOME PAGE ────────── -->
+  <div class="page active" id="page-home">
+    <div class="hero">
+      <div class="hero-pattern"></div>
+      <div class="hero-line-dec"></div>
+      <div class="hero-year">2026</div>
+      <div class="hero-content">
+        <p class="hero-sub">Stonehill International School &nbsp;·&nbsp; Bengaluru, India</p>
+        <h1>Where <em>Diplomacy</em><br>Meets Purpose.</h1>
+        <p>SISMUN brings together young delegates to debate, collaborate, and shape the future — one resolution at a
+          time.
+        </p>
+        <div class="hero-btns">
+          <button class="btn-outline" onclick="showPage('committees')">View Committees</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="images/home.jpg" alt="SISMUN conference delegates">
+      </div>
+      <div class="hero-scroll">
+        <div class="hero-scroll-line"></div>
+        Scroll to explore
+      </div>
+    </div>
+
+    <div class="theme-section">
+      <div class="theme-inner">
+        <p class="theme-label">SISMUN 2026</p>
+        <p class="theme-word">Theme</p>
+        <h2 class="theme-quote">"Informational Integrity in a Globalised World."</h2>
+      </div>
+    </div>
+
+    <div class="section" style="margin-top: -3rem;">
+      <p class="section-label">By the numbers</p>
+      <h2 class="section-title">SISMUN at a <em>glance</em></h2>
+      <div class="stats-row">
+        <div class="stat">
+          <div class="stat-num">5</div>
+          <div class="stat-label">Committees</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">200+</div>
+          <div class="stat-label">Delegates</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">3</div>
+          <div class="stat-label">Days of debate</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Schools invited</div>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="3" y="4" width="18" height="18" rx="2" />
+              <line x1="16" y1="2" x2="16" y2="6" />
+              <line x1="8" y1="2" x2="8" y2="6" />
+              <line x1="3" y1="10" x2="21" y2="10" />
+            </svg>
+          </div>
+          <h3>Conference Dates</h3>
+          <p>October 17–19, 2026. Three days of committees, social events, and closing ceremonies at Stonehill
+            International School, Bengaluru.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+              <circle cx="12" cy="9" r="2.5" />
+            </svg>
+          </div>
+          <h3>Venue</h3>
+          <p>Stonehill International School, Tarahunise Post, Off Bellary Road, Jala Hobli, Bengaluru, Karnataka 562157.
+          </p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" />
+            </svg>
+          </div>
+          <h3>Open to all schools</h3>
+          <p>Delegates from Grades 8–12 are welcome. First-timers and seasoned MUNers alike will find committees suited
+            to their level.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-card-icon">
+            <svg viewBox="0 0 24 24">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <h3>Awards</h3>
+          <p>Best Delegate, Outstanding Delegate, Verbal Mention, and Best Position Paper awards across all committees.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-section">
+      <p class="quote-text">"Diplomacy is not about liking or disliking people. It is about managing interests."</p>
+      <p class="quote-attr">— Jaishankar</p>
+    </div>
+
+    <!-- <div class="section">
+      <p class="section-label">Get involved</p>
+      <h2 class="section-title">Ready to make your <em>voice heard?</em></h2>
+      <p style="max-width:520px; color: var(--gray-400); line-height:1.75; font-size:15px; margin-bottom:2rem;">
+        Registration is open to all schools. Secure your spot early — delegate spots fill up fast. Our secretariat team
+        is here to guide you every step of the way.
+      </p>
+      <button class="btn-primary" style="background:var(--red);color:var(--white);"
+        onclick="showPage('register')">Register your delegation</button>
+    </div> -->
+
+  </div>
+
+  <!-- ────────── ABOUT PAGE ────────── -->
+  <div class="page" id="page-about">
+    <div class="about-hero">
+      <div class="about-content">
+        <p class="section-label" style="color:var(--red);">Our story</p>
+        <h1>Building the diplomats<br>of tomorrow.</h1>
+        <p>SISMUN is a platform where young leaders
+          develop the skills to engage with the world's most pressing challenges.</p>
+      </div>
+      <div class="about-image">
+        <img src="images/about.JPG" alt="SISMUN team">
+      </div>
+    </div>
+
+    <div class="section letter-section">
+      <div class="letter-grid">
+        <div class="letter-copy">
+          <div>
+            <h2 class="section-title">A Letter From The Secretary-General</h2>
+            <div class="body-text">
+              <p>Dear Delegates,</p>
+              <p style="margin-top: -10px;">I am pleased to welcome you to SISMUN 2026. This conference brings together
+                delegates from grades 7–12,
+                ranging from beginners to experienced participants, each bringing a different perspective into
+                committee.
+                As SISMUN continues to grow, we are committed to building a space where serious debate and genuine
+                engagement are expected from every delegate.</p>
+              <p>At SISMUN, our focus is on realism, diplomacy, and competitiveness. We have placed strong emphasis on
+                organization, well-structured agendas, and capable chairs to ensure that committees are not only
+                efficient, but challenging and engaging. Delegates should expect a conference that pushes them to think
+                critically, negotiate effectively, and participate in debates that reflect the complexity of real-world
+                issues.</p>
+              <p>This conference is built on the expectation that delegates will take initiative. I encourage you to
+                speak
+                up, take risks, and engage fully in committee. Step beyond what is comfortable, contribute meaningfully,
+                and approach debate with intent. I look forward to seeing the level of discussion and collaboration that
+                SISMUN 2026 will produce.</p>
+              <p>Regards,</p>
+              <p style="margin-top: -22px; font-weight: bold;">Gil Wietzman</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="letter-image">
+          <img src="images/sec-gen-letter.jpg" alt="Secretary General Letter">
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--gray-100); padding: 4rem 3rem;">
+      <p class="section-label">The secretariat</p>
+      <h2 class="section-title" style="margin-bottom:0.5rem;">Meet the <em>team</em></h2>
+      <p style="color:var(--gray-400); font-size:14px; margin-bottom:2rem;">The student leaders who make SISMUN
+        possible.</p>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">SG</div>
+          <h4>Secretary General</h4>
+          <small>Gil Wietzman</small>
+          <p>Oversees all conference operations and sets the thematic direction for SISMUN.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">DSG</div>
+          <h4>Deputy Sec-Gen #1</h4>
+          <small>Vivaan Sahu</small>
+          <p>Supports the Secretary General and manages inter-committee coordination.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">DSG</div>
+          <h4>Deputy Sec-Gen #2</h4>
+          <small>Vanisha Bondhade</small>
+          <p>Supports the Secretary General and manages inter-committee coordination.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">PGA</div>
+          <h4>President of General Assemblies</h4>
+          <small>Naetrra Selva</small>
+          <p>Oversees the general assemblies and ensures smooth functioning of the conference.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">HDA</div>
+          <h4>Head of Delegate Affairs</h4>
+          <small>Deetya Rajath</small>
+          <p>Manages delegate communication and registration.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">PR</div>
+          <h4>Head of Press</h4>
+          <small>Shanaya Anish Bafna</small>
+          <p>Manages social media, outreach to schools, and conference documentation.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AHP</div>
+          <h4>Assistant Head of Press</h4>
+          <small>Sanvi Rai</small>
+          <p>Helps the head of press with social media management and documentation.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">HD</div>
+          <h4>Head of Design</h4>
+          <small>Arush Tiwary</small>
+          <p>Designs promotional materials and manages visual identity and consistency.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AHD</div>
+          <h4>Assistant Head of Design</h4>
+          <small>Kian Ferreira</small>
+          <p>Designs promotional materials and manages visual identity and consistency.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">HAL</div>
+          <h4>Head of Admin and Logistics</h4>
+          <small>Shaayan Sahu</small>
+          <p>Manages administrative tasks and logistical arrangements for the conference.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">AHL</div>
+          <h4>Assistant Head of Admin and Logistics</h4>
+          <small>Surabhi SriKruthi</small>
+          <p>Supports the head of admin and logistics with daily operations.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">ATA</div>
+          <h4>Assistant Teacher Advisor</h4>
+          <small>Shivani Shah</small>
+          <p>Provides guidance and support to teachers and students involved in the Model United Nations program.</p>
+        </div>
+      </div>
+      <div class="team-grid team-grid-two">
+        <div class="team-card">
+          <div class="team-avatar">TA</div>
+          <h4>Teacher Advisor</h4>
+          <small>Severine Fumoux</small>
+          <p>Provides guidance and support to teachers and students involved in the Model United Nations program.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">TA</div>
+          <h4>Teacher Advisor</h4>
+          <small>Edrian Echague</small>
+          <p>Provides guidance and support to teachers and students involved in the Model United Nations program.</p>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ────────── COMMITTEES PAGE ────────── -->
+  <div class="page" id="page-committees">
+    <div class="page-banner">
+      <div>
+        <p class="section-label">SISMUN 2026</p>
+        <h1>Committees</h1>
+        <p>Five carefully curated committees spanning global security, climate, development, and human rights. Find
+          yours.</p>
+      </div>
+      <span class="badge">5 committees open</span>
+    </div>
+
+    <div class="committee-list">
+      <div class="committee-item">
+        <div class="committee-header" onclick="toggleCommittee(this)">
+          <div class="committee-tag">SOCHUM</div>
+          <div class="committee-info">
+            <h3>Social, Humanitarian & Cultural Committee</h3>
+            <p>Agenda: Combating the Spread of Misinformation while Safeguarding Freedom of Expression in the Digital
+              Age</p>
+          </div>
+          <div class="committee-meta">
+            <span class="tag beginner">Beginner-friendly</span>
+          </div>
+        </div>
+        <div class="committee-body">
+          <h4>About the committee</h4>
+          <p>SOCHUM addresses social, humanitarian, and cultural issues facing the global community. This session
+            tackles one of the defining challenges of the digital era — how to curb the viral spread of misinformation
+            without eroding the fundamental right to free expression.</p>
+          <h4>Key topics covered</h4>
+          <ul>
+            <li>Platform content moderation</li>
+            <li>State-sponsored disinformation</li>
+            <li>Freedom of expression (UDHR Article 19)</li>
+            <li>Media literacy & digital education</li>
+            <li>Algorithmic amplification</li>
+          </ul>
+          <div style="margin-top: 1.25rem;">
+            <button class="btn-view-committee" onclick="showPage('sochum')">View Full Committee Page →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- WHO -->
+      <div class="committee-item">
+        <div class="committee-header" onclick="toggleCommittee(this)">
+          <div class="committee-tag">WHO</div>
+          <div class="committee-info">
+            <h3>World Health Organisation</h3>
+            <p>Agenda: Addressing Vaccine Hesitancy and the Spread of Health Misinformation during the COVID-19 Pandemic
+            </p>
+          </div>
+          <div class="committee-meta">
+            <span class="tag" style="background:#E8F0FE; color:#1A56DB;">Freeze: 2021</span>
+            <span class="tag beginner">Beginner-friendly</span>
+          </div>
+        </div>
+        <div class="committee-body">
+          <h4>About the committee</h4>
+          <p>The WHO committee tackles one of the most urgent public health crises of our time — not just the pandemic
+            itself, but the parallel infodemic of misinformation that undermined vaccination campaigns globally.
+            Delegates deliberate from the perspective of 2021, when vaccines are newly available but hesitancy threatens
+            mass immunisation efforts.</p>
+          <h4>Key topics covered</h4>
+          <ul>
+            <li>Vaccine hesitancy & public trust</li>
+            <li>The COVID-19 infodemic</li>
+            <li>COVAX & global vaccine equity</li>
+            <li>Platform responsibility for health misinformation</li>
+            <li>Emergency public health powers</li>
+          </ul>
+          <div style="margin-top: 1.25rem;">
+            <button class="btn-view-committee" onclick="showPage('who')">View Full Committee Page →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMO -->
+      <div class="committee-item">
+        <div class="committee-header" onclick="toggleCommittee(this)">
+          <div class="committee-tag">IMO</div>
+          <div class="committee-info">
+            <h3>International Maritime Organisation</h3>
+            <p>Agenda: Ensuring Maritime Security and the Free Flow of Energy Trade in the Strait of Hormuz amid Rising
+              Geopolitical Tensions and Information Warfare</p>
+          </div>
+          <div class="committee-meta">
+            <span class="tag intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="committee-body">
+          <h4>About the committee</h4>
+          <p>The IMO oversees the safety, security, and environmental impact of international shipping. This session
+            places delegates at the centre of one of the world's most strategically critical waterways — the Strait of
+            Hormuz — where geopolitical rivalries, energy dependency, and information warfare converge to threaten
+            global trade.</p>
+          <h4>Key topics covered</h4>
+          <ul>
+            <li>Freedom of navigation & maritime law</li>
+            <li>Energy security & oil trade routes</li>
+            <li>Geopolitical tensions in the Persian Gulf</li>
+            <li>Information warfare at sea</li>
+            <li>Naval escalation & de-escalation mechanisms</li>
+          </ul>
+          <div style="margin-top: 1.25rem;">
+            <button class="btn-view-committee" onclick="showPage('imo')">View Full Committee Page →</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- UNDP -->
+      <div class="committee-item">
+        <div class="committee-header" onclick="toggleCommittee(this)">
+          <div class="committee-tag">UNDP</div>
+          <div class="committee-info">
+            <h3>United Nations Development Programme</h3>
+            <p>Agenda: Strengthening Information Integrity and Countering Misinformation in Conflict Reporting: The Case
+              of the Israel–Palestine Conflict</p>
+          </div>
+          <div class="committee-meta">
+            <span class="tag intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="committee-body">
+          <h4>About the committee</h4>
+          <p>The UNDP committee examines one of the most deeply contested and politically charged conflicts in the
+            modern world through the lens of information integrity. Delegates will grapple with how misinformation,
+            propaganda, and media bias shape international perception of the Israel–Palestine conflict — and what
+            multilateral frameworks can do about it.</p>
+          <h4>Key topics covered</h4>
+          <ul>
+            <li>Conflict journalism & media bias</li>
+            <li>Social media as a battleground for narratives</li>
+            <li>Humanitarian reporting standards</li>
+            <li>State propaganda & information warfare</li>
+            <li>Press freedom in conflict zones</li>
+          </ul>
+          <div style="margin-top: 1.25rem;">
+            <button class="btn-view-committee" onclick="showPage('undp')">View Full Committee Page →</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="committee-item">
+        <div class="committee-header" onclick="toggleCommittee(this)">
+          <div class="committee-tag">UNODC</div>
+          <div class="committee-info">
+            <h3> Undecided </h3>
+            <p>Agenda: Undecided</p>
+          </div>
+          <div class="committee-meta">
+            <span class="tag beginner">Undecided</span>
+          </div>
+        </div>
+        <div class="committee-body">
+          <h4>About the committee</h4>
+          <p>Undecided</p>
+          <h4>Key topics covered</h4>
+          <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- ────────── REGISTER PAGE ────────── -->
+  <div class="page" id="page-register">
+    <div class="reg-layout">
+      <div class="reg-info">
+        <div>
+          <p
+            style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:1rem;">
+            SISMUN 2026</p>
+          <h2>Secure your seat at the table.</h2>
+          <p style="color: white;">Fill out the delegation registration form to reserve your spots. Our team will
+            confirm your registration
+            and share further details.</p>
+
+          <div class="reg-timeline">
+            <h3>Important dates</h3>
+            <div class="timeline-item">
+              <div class="tl-dot done"></div>
+              <div><small>Applications open</small><span>1 September 2026</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot done"></div>
+              <div><small>Early registration deadline</small><span>20 September 2026</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div><small>Position papers due</small><span>5 October 2026</span></div>
+            </div>
+            <div class="timeline-item">
+              <div class="tl-dot"></div>
+              <div><small>Conference begins</small><span>17 October 2026</span></div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p style="font-size:13px; color:rgba(255,255,255,0.5); line-height:1.65;">
+            Questions? Contact us at<br>
+            <a href="mailto:sis.mun@stu.stonehill.in"
+              style="color:rgba(255,255,255,0.85); text-decoration:underline;">sis.mun@stu.stonehill.in</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="reg-form-wrap">
+        <h2>Delegation Registration</h2>
+        <div id="reg-form-inner">
+          <div class="form-row">
+            <div class="form-group">
+              <label>School Name</label>
+              <input type="text" placeholder="e.g. Inventure Academy">
+            </div>
+            <div class="form-group">
+              <label>City</label>
+              <input type="text" placeholder="e.g. Bengaluru">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Faculty Advisor Name</label>
+              <input type="text" placeholder="Full name">
+            </div>
+            <div class="form-group">
+              <label>Faculty Advisor Email</label>
+              <input type="email" placeholder="advisor@school.edu">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label>Faculty Advisor Phone</label>
+              <input type="tel" placeholder="+91 00000 00000">
+            </div>
+            <div class="form-group">
+              <label>Number of Delegates</label>
+              <input type="number" min="1" max="40" placeholder="e.g. 8">
+            </div>
+
+          </div>
+          <div class="form-group">
+            <label>Additional Notes</label>
+            <textarea
+              placeholder="Any special requirements, accessibility needs, or questions for our team..."></textarea>
+          </div>
+          <button class="submit-btn" onclick="submitForm()">Submit Registration</button>
+          <p class="form-note">By submitting, you agree to SISMUN's code of conduct. Registration is confirmed only upon
+            receipt of confirmation email from our secretariat.</p>
+        </div>
+        <div class="success-msg" id="success-msg">
+          <strong style="font-size:17px; display:block; margin-bottom:0.5rem;">Registration received!</strong>
+          Thank you for registering with SISMUN 2026. Our secretariat will review your application and be in touch
+          with you soon. We look forward to welcoming your delegation!
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── SOCHUM COMMITTEE PAGE ────────── -->
+  <div class="page" id="page-sochum">
+    <div class="committee-page-hero">
+      <p class="breadcrumb" onclick="showPage('committees')">← Committees / <span>SOCHUM</span></p>
+      <div class="committee-pills">
+        <div class="committee-pill red">Beginner-friendly</div>
+        <div class="committee-pill">SOCHUM</div>
+      </div>
+      <h1 style="margin-top: 1.25rem;">Social, Humanitarian<br>& Cultural Committee</h1>
+      <p class="agenda-label">Agenda: Combating the Spread of Misinformation while Safeguarding Freedom of Expression in
+        the Digital Age</p>
+    </div>
+
+    <div class="cp-grid">
+      <div class="cp-main">
+
+        <div class="cp-card">
+          <h3>Background & Context</h3>
+          <p>The digital age has transformed how information is created, shared, and consumed. Social media platforms,
+            messaging apps, and online news sources now reach billions of people — but the same infrastructure that
+            democratises information also enables the rapid, unchecked spread of misinformation and disinformation at an
+            unprecedented scale.</p>
+          <p>From health misinformation during COVID-19 to election interference through coordinated inauthentic
+            behaviour, the consequences of unchecked false information are tangible and severe. Yet any attempt by
+            governments or platforms to regulate online speech risks infringing on Article 19 of the Universal
+            Declaration of Human Rights, which guarantees freedom of opinion and expression.</p>
+          <p>Delegates in this committee must grapple with this fundamental tension: how can the international community
+            protect citizens from the demonstrable harms of misinformation, while preserving the open, free internet
+            that underpins democratic participation?</p>
+        </div>
+
+        <div class="cp-card">
+          <h3>Key Issues for Debate</h3>
+          <ul>
+            <li><strong>Platform accountability:</strong> Should social media companies be legally liable for
+              misinformation spread on their platforms?</li>
+            <li><strong>State-sponsored disinformation:</strong> How should the international community respond to
+              governments that weaponise misinformation?</li>
+            <li><strong>Content moderation standards:</strong> Who decides what constitutes misinformation, and how do
+              we prevent censorship?</li>
+            <li><strong>Algorithmic amplification:</strong> Do recommendation algorithms have a responsibility to
+              deprioritise unverified content?</li>
+            <li><strong>Media literacy:</strong> What role should education systems play in building resilience against
+              misinformation?</li>
+            <li><strong>Cross-border enforcement:</strong> How can international frameworks regulate content that
+              crosses jurisdictions?</li>
+          </ul>
+        </div>
+
+        <div class="cp-card">
+          <h3>Questions to Consider</h3>
+          <ul>
+            <li>How does your country currently regulate online speech, and where does it draw the line?</li>
+            <li>What international bodies or treaties currently address freedom of expression online?</li>
+            <li>How do developing nations with limited digital infrastructure approach this issue differently?</li>
+            <li>What is the difference between misinformation, disinformation, and malinformation — and does it matter
+              legally?</li>
+            <li>How can platforms be incentivised (rather than mandated) to act against harmful content?</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cp-sidebar">
+
+        <div class="cp-sidebar-card">
+          <h4>Committee Details</h4>
+          <div class="detail-row"><span>Committee</span><span>SOCHUM</span></div>
+          <div class="detail-row"><span>Difficulty</span><span>Beginner</span></div>
+          <div class="detail-row"><span>Delegates</span><span>~20–25</span></div>
+          <div class="detail-row"><span>Language</span><span>English</span></div>
+          <div class="detail-row"><span>Conference</span><span>SISMUN 2026</span></div>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Dais</h4>
+          <p>Chair, Vice-Chair, and Rapporteur details will be announced closer to the conference date.</p>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Position Paper</h4>
+          <p>All delegates are required to submit a position paper before <strong>25 August 2026</strong>. Your paper
+            should cover your country's stance on the agenda item and proposed solutions.</p>
+          <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
+              href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
+        </div>
+
+        <div class="cp-sidebar-card" style="background: var(--red); border-color: var(--red);">
+          <h4 style="color: rgba(255,255,255,0.6);">Ready to join?</h4>
+          <p style="color: white; margin-bottom: 1rem;">Secure your delegation's spot at SISMUN 2026 today.</p>
+          <button onclick="showPage('register')"
+            style="width:100%; background: white; color: var(--red); border: none; padding: 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; cursor: pointer; text-transform: uppercase;">Register
+            Now</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── WHO COMMITTEE PAGE ────────── -->
+  <div class="page" id="page-who">
+    <div class="committee-page-hero">
+      <p class="breadcrumb" onclick="showPage('committees')">← Committees / <span>WHO</span></p>
+      <div class="committee-pills">
+        <div class="committee-pill red">Beginner-friendly</div>
+        <div class="committee-pill">WHO</div>
+        <div class="committee-pill">Freeze Date: 2021</div>
+      </div>
+      <h1 style="margin-top: 1.25rem;">World Health<br>Organisation</h1>
+      <p class="agenda-label">Agenda: Addressing Vaccine Hesitancy and the Spread of Health Misinformation during the
+        COVID-19 Pandemic <em style="color: rgba(255,255,255,0.4); font-style: normal; font-size: 12px;">(Freeze Date:
+          2021)</em></p>
+    </div>
+
+    <div class="cp-grid">
+      <div class="cp-main">
+
+        <div class="cp-card">
+          <h3>Background & Context</h3>
+          <p>In December 2019, a novel coronavirus — SARS-CoV-2 — was identified in Wuhan, China. Within months,
+            COVID-19 had spread to every corner of the globe, prompting the WHO to declare a Public Health Emergency
+            of International Concern in January 2020 and a pandemic in March 2020. The human and economic toll has
+            been staggering: millions of deaths, overwhelmed health systems, and economies brought to their knees.</p>
+          <p>As vaccines were developed at an unprecedented pace under initiatives like COVAX, a parallel crisis
+            emerged — an "infodemic." The WHO itself coined the term to describe the overwhelming and often
+            contradictory flood of information, misinformation, and disinformation surrounding COVID-19. False claims
+            about vaccine safety, 5G conspiracy theories, and politically motivated narratives spread virally across
+            social media, undermining public health efforts worldwide.</p>
+          <p>Delegates in this committee will deliberate as of 2021 — a critical moment when vaccines are newly
+            available but vaccine hesitancy is threatening the viability of mass immunisation campaigns. The
+            challenge: how does the international community combat health misinformation while maintaining public
+            trust, protecting civil liberties, and ensuring equitable vaccine access?</p>
+        </div>
+
+        <div class="cp-card">
+          <h3>Key Issues for Debate</h3>
+          <ul>
+            <li><strong>Vaccine hesitancy drivers:</strong> What are the root causes of hesitancy — mistrust of
+              institutions, religious beliefs, misinformation — and how should responses be tailored?</li>
+            <li><strong>The infodemic:</strong> How can the WHO and member states coordinate to counter health
+              misinformation at scale without becoming arbiters of truth?</li>
+            <li><strong>COVAX & vaccine equity:</strong> Wealthy nations are vaccinating rapidly while the Global
+              South lags — how does inequity fuel mistrust and hesitancy?</li>
+            <li><strong>Platform responsibility:</strong> Should social media companies be required to remove health
+              misinformation, and who defines what qualifies?</li>
+            <li><strong>Community trust:</strong> How can health authorities rebuild trust with communities
+              historically mistreated by medical institutions?</li>
+            <li><strong>Emergency powers:</strong> Some governments have enacted mandatory vaccination policies —
+              where is the line between public health necessity and individual rights?</li>
+          </ul>
+        </div>
+
+        <div class="cp-card">
+          <h3>Questions to Consider</h3>
+          <ul>
+            <li>What is your country's current vaccination rate and what barriers to uptake exist as of 2021?</li>
+            <li>How has your government communicated vaccine safety information to the public, and has it been
+              effective?</li>
+            <li>What role should the WHO play in regulating health information versus individual member states?</li>
+            <li>How do you balance freedom of speech with the need to suppress demonstrably false health claims?</li>
+            <li>What lessons from past vaccine campaigns (polio, measles) can be applied to COVID-19 hesitancy?</li>
+            <li>How does your country's media landscape and internet access affect the spread of misinformation?</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cp-sidebar">
+
+        <div class="cp-sidebar-card">
+          <h4>Committee Details</h4>
+          <div class="detail-row"><span>Committee</span><span>WHO</span></div>
+          <div class="detail-row"><span>Difficulty</span><span>Beginner</span></div>
+          <div class="detail-row"><span>Delegates</span><span>~20–25</span></div>
+          <div class="detail-row"><span>Freeze Date</span><span>2021</span></div>
+          <div class="detail-row"><span>Language</span><span>English</span></div>
+          <div class="detail-row"><span>Conference</span><span>SISMUN 2026</span></div>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>A note on the freeze date</h4>
+          <p>This committee operates with a freeze date of <strong>2021</strong>. Delegates must research and argue
+            from the perspective of that moment in time — vaccines are newly available, Omicron has not yet emerged,
+            and the infodemic is at its peak. Events after 2021 are not in scope.</p>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Dais</h4>
+          <p>Chair, Vice-Chair, and Rapporteur details will be announced closer to the conference date.</p>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Position Paper</h4>
+          <p>All delegates are required to submit a position paper before <strong>25 August 2026</strong>. Your paper
+            should cover your country's stance on the agenda item and proposed solutions.</p>
+          <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
+              href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
+        </div>
+
+        <div class="cp-sidebar-card" style="background: var(--red); border-color: var(--red);">
+          <h4 style="color: rgba(255,255,255,0.6);">Ready to join?</h4>
+          <p style="color: white; margin-bottom: 1rem;">Secure your delegation's spot at SISMUN 2026 today.</p>
+          <button onclick="showPage('register')"
+            style="width:100%; background: white; color: var(--red); border: none; padding: 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; cursor: pointer; text-transform: uppercase;">Register
+            Now</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── IMO COMMITTEE PAGE ────────── -->
+  <div class="page" id="page-imo">
+    <div class="committee-page-hero">
+      <p class="breadcrumb" onclick="showPage('committees')">← Committees / <span>IMO</span></p>
+      <div class="committee-pills">
+        <div class="committee-pill red">Intermediate</div>
+        <div class="committee-pill">IMO</div>
+      </div>
+      <h1 style="margin-top: 1.25rem;">International Maritime<br>Organisation</h1>
+      <p class="agenda-label">Agenda: Ensuring Maritime Security and the Free Flow of Energy Trade in the Strait of
+        Hormuz amid Rising Geopolitical Tensions and Information Warfare</p>
+    </div>
+
+    <div class="cp-grid">
+      <div class="cp-main">
+
+        <div class="cp-card">
+          <h3>Background & Context</h3>
+          <p>The Strait of Hormuz is one of the most strategically vital chokepoints on earth. Connecting the Persian
+            Gulf to the Gulf of Oman, it is the passage through which approximately 20% of the world's total oil supply
+            flows daily — including roughly a third of all liquefied natural gas traded globally. Its disruption, even
+            briefly, would send shockwaves through energy markets and economies worldwide.</p>
+          <p>The strait is flanked by Iran to the north and Oman and the UAE to the south. For decades, it has been a
+            flashpoint — Iran has repeatedly threatened to close it in response to Western sanctions, while the United
+            States and its allies maintain a significant naval presence to guarantee freedom of navigation. Incidents of
+            tanker seizures, drone attacks on shipping vessels, and GPS spoofing have become increasingly common,
+            blurring the line between conventional maritime conflict and information warfare.</p>
+          <p>Delegates must navigate this volatile environment as the IMO — a body focused on maritime safety and
+            regulation, not military force — and craft multilateral frameworks that protect shipping, de-escalate
+            tensions, and prevent information warfare from triggering wider conflict.</p>
+        </div>
+
+        <div class="cp-card">
+          <h3>Key Issues for Debate</h3>
+          <ul>
+            <li><strong>Freedom of navigation:</strong> How can the international community uphold UNCLOS provisions
+              guaranteeing innocent passage through international straits against state interference?</li>
+            <li><strong>Energy security:</strong> What mechanisms can reduce global dependence on the Strait of Hormuz
+              as a single point of failure for energy supply chains?</li>
+            <li><strong>Tanker attacks & vessel seizures:</strong> How should the IMO respond when commercial vessels
+              are attacked or seized for geopolitical leverage?</li>
+            <li><strong>GPS spoofing & cyber warfare:</strong> State actors are increasingly using electronic warfare to
+              disorient vessels — how can maritime navigation be hardened against this?</li>
+            <li><strong>Naval escorts & militarisation:</strong> Does the presence of military escorts protect or
+              further inflame tensions in the strait?</li>
+            <li><strong>Iran & sanctions:</strong> How do Western sanctions regimes affect Iran's behaviour in the
+              strait, and what role does the IMO play in this political dynamic?</li>
+          </ul>
+        </div>
+
+        <div class="cp-card">
+          <h3>Questions to Consider</h3>
+          <ul>
+            <li>What is your country's energy relationship with the Persian Gulf, and how exposed are you to disruption
+              in the Strait of Hormuz?</li>
+            <li>Does your country have a naval presence in the region, and what is its stated mandate?</li>
+            <li>How does international maritime law (UNCLOS) apply to the specific geography and political circumstances
+              of the strait?</li>
+            <li>What precedents exist for international bodies managing access to strategic waterways — the Suez Canal,
+              the Panama Canal — and what lessons apply here?</li>
+            <li>How do you distinguish between legitimate security operations and acts of aggression at sea in an era of
+              information warfare?</li>
+            <li>What confidence-building measures could reduce the risk of accidental escalation between naval forces in
+              the strait?</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cp-sidebar">
+
+        <div class="cp-sidebar-card">
+          <h4>Committee Details</h4>
+          <div class="detail-row"><span>Committee</span><span>IMO</span></div>
+          <div class="detail-row"><span>Difficulty</span><span>Intermediate</span></div>
+          <div class="detail-row"><span>Delegates</span><span>~20–25</span></div>
+          <div class="detail-row"><span>Language</span><span>English</span></div>
+          <div class="detail-row"><span>Conference</span><span>SISMUN 2026</span></div>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Dais</h4>
+          <p>Chair, Vice-Chair, and Rapporteur details will be announced closer to the conference date.</p>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Position Paper</h4>
+          <p>All delegates are required to submit a position paper before <strong>25 August 2026</strong>. Your paper
+            should cover your country's stance on the agenda item and proposed solutions.</p>
+          <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
+              href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
+        </div>
+
+        <div class="cp-sidebar-card" style="background: var(--red); border-color: var(--red);">
+          <h4 style="color: rgba(255,255,255,0.6);">Ready to join?</h4>
+          <p style="color: white; margin-bottom: 1rem;">Secure your delegation's spot at SISMUN 2026 today.</p>
+          <button onclick="showPage('register')"
+            style="width:100%; background: white; color: var(--red); border: none; padding: 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; cursor: pointer; text-transform: uppercase;">Register
+            Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ────────── UNDP COMMITTEE PAGE ────────── -->
+  <div class="page" id="page-undp">
+    <div class="committee-page-hero">
+      <p class="breadcrumb" onclick="showPage('committees')">← Committees / <span>UNDP</span></p>
+      <div class="committee-pills">
+        <div class="committee-pill red">Intermediate</div>
+        <div class="committee-pill">UNDP</div>
+      </div>
+      <h1 style="margin-top: 1.25rem;">United Nations<br>Development Programme</h1>
+      <p class="agenda-label">Agenda: Strengthening Information Integrity and Countering Misinformation in Conflict
+        Reporting: The Case of the Israel–Palestine Conflict</p>
+    </div>
+
+    <div class="cp-grid">
+      <div class="cp-main">
+
+        <div class="cp-card">
+          <h3>Background & Context</h3>
+          <p>The Israel–Palestine conflict is among the most reported — and most contested — conflicts in modern
+            history. Decades of competing historical narratives, deeply entrenched political positions, and immense
+            international stakes have made it a crucible for misinformation, propaganda, and media bias. Every military
+            operation, diplomatic development, and humanitarian crisis is filtered through layers of ideology,
+            nationalism, and geopolitical interest before reaching global audiences.</p>
+          <p>The rise of social media has dramatically accelerated and complicated this dynamic. Unverified footage,
+            out-of-context images, and algorithmically amplified narratives spread instantaneously across platforms,
+            shaping public opinion and policy debates in real time. Journalists operating in conflict zones face threats
+            to their safety, restrictions on access, and accusations of bias from all sides. Meanwhile, both state and
+            non-state actors invest heavily in information operations designed to shape the global narrative in their
+            favour.</p>
+          <p>The UNDP, while primarily a development body, has a mandate that encompasses human rights, institutional
+            resilience, and the rule of law — all of which are undermined when conflict reporting is saturated with
+            misinformation. Delegates in this committee will design frameworks to strengthen information integrity,
+            protect journalists, and build public resilience to manipulation, without taking a political stance on the
+            conflict itself.</p>
+        </div>
+
+        <div class="cp-card">
+          <h3>Key Issues for Debate</h3>
+          <ul>
+            <li><strong>Media access in conflict zones:</strong> How can the international community ensure journalists
+              have safe and unimpeded access to conflict areas to report accurately?</li>
+            <li><strong>Verification & fact-checking:</strong> What international standards and infrastructure exist for
+              verifying conflict reporting, and how can they be strengthened?</li>
+            <li><strong>Social media amplification:</strong> How do platforms' content policies and algorithms affect
+              the spread of misinformation about the conflict, and what responsibilities do they bear?</li>
+            <li><strong>State information operations:</strong> Both state and non-state actors in the conflict conduct
+              organised information campaigns — how should the international community respond?</li>
+            <li><strong>Humanitarian reporting:</strong> How can international humanitarian law be better integrated
+              into conflict journalism standards to protect civilian narratives?</li>
+            <li><strong>Journalist safety:</strong> Reporters covering the conflict face extraordinary risks — what
+              mechanisms exist to protect them and hold perpetrators of attacks on press freedom accountable?</li>
+          </ul>
+        </div>
+
+        <div class="cp-card">
+          <h3>Questions to Consider</h3>
+          <ul>
+            <li>What is your country's official position on the Israel–Palestine conflict, and how does that shape your
+              approach to information integrity in this context?</li>
+            <li>How does your country's domestic media cover the conflict, and what biases or gaps have been identified?
+            </li>
+            <li>What existing international frameworks — UN resolutions, Geneva Conventions, press freedom treaties —
+              apply to conflict reporting, and are they adequate?</li>
+            <li>How do you define the line between legitimate political messaging and deliberate disinformation in a
+              conflict context?</li>
+            <li>What role should the UNDP specifically — as opposed to bodies like the HRC or UNSC — play in addressing
+              information integrity in conflicts?</li>
+            <li>How can frameworks developed for this conflict be made applicable to other protracted conflicts around
+              the world?</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cp-sidebar">
+
+        <div class="cp-sidebar-card">
+          <h4>Committee Details</h4>
+          <div class="detail-row"><span>Committee</span><span>UNDP</span></div>
+          <div class="detail-row"><span>Difficulty</span><span>Intermediate</span></div>
+          <div class="detail-row"><span>Delegates</span><span>~20–25</span></div>
+          <div class="detail-row"><span>Language</span><span>English</span></div>
+          <div class="detail-row"><span>Conference</span><span>SISMUN 2026</span></div>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>A note on sensitivity</h4>
+          <p>This committee addresses one of the most politically sensitive conflicts in the world. Delegates are
+            expected to engage with the topic respectfully, rigorously, and with empathy for all affected civilian
+            populations. The committee's focus is on <strong>information integrity</strong> — not on adjudicating the
+            political or territorial dimensions of the conflict.</p>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Dais</h4>
+          <p>Chair, Vice-Chair, and Rapporteur details will be announced closer to the conference date.</p>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Position Paper</h4>
+          <p>All delegates are required to submit a position paper before <strong>25 August 2026</strong>. Your paper
+            should cover your country's stance on the agenda item and proposed solutions.</p>
+          <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
+              href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
+        </div>
+
+        <div class="cp-sidebar-card" style="background: var(--red); border-color: var(--red);">
+          <h4 style="color: rgba(255,255,255,0.6);">Ready to join?</h4>
+          <p style="color: white; margin-bottom: 1rem;">Secure your delegation's spot at SISMUN 2026 today.</p>
+          <button onclick="showPage('register')"
+            style="width:100%; background: white; color: var(--red); border: none; padding: 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; cursor: pointer; text-transform: uppercase;">Register
+            Now</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+  <footer>
+    <div class="f-logo">SIS<span>MUN</span></div>
+    <p>Stonehill International School Model United Nations</p>
+    <div class="f-links">
+      <a onclick="showPage('home')">Home</a>
+      <a onclick="showPage('about')">About</a>
+      <a onclick="showPage('committees')">Committees</a>
+      <a onclick="showPage('register')">Register</a>
+    </div>
+    <div class="f-divider"></div>
+    <p class="f-copy">© 2026 SISMUN — Stonehill International School. All rights reserved.</p>
+  </footer>
+  </div>
+
+  <script>
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+      document.getElementById('page-' + id).classList.add('active');
+      const navEl = document.getElementById('nav-' + id);
+      if (navEl) navEl.classList.add('active');
+      window.scrollTo(0, 0);
+    }
+
+    function toggleCommittee(header) {
+      const body = header.nextElementSibling;
+      const isOpen = body.classList.contains('open');
+      document.querySelectorAll('.committee-body').forEach(b => b.classList.remove('open'));
+      if (!isOpen) body.classList.add('open');
+    }
+
+    const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkV4d2G9WS-MzHIZ46fh07K4PMunjAp1v2w7AO52I62WbyzEhWyVTEHDa1JuZH9-DXpA/exec";
+
+    async function submitForm() {
+      const btn = document.querySelector('.submit-btn');
+      btn.textContent = 'Submitting...';
+      btn.disabled = true;
+
+      const params = new URLSearchParams({
+        school: document.querySelector('input[placeholder="e.g. Inventure Academy"]').value,
+        city: document.querySelector('input[placeholder="e.g. Bengaluru"]').value,
+        advisorName: document.querySelector('input[placeholder="Full name"]').value,
+        advisorEmail: document.querySelector('input[type="email"]').value,
+        advisorPhone: document.querySelector('input[type="tel"]').value,
+        numDelegates: document.querySelector('input[type="number"]').value,
+        notes: document.querySelector('textarea').value
+      });
+
+      try {
+        await fetch(APPS_SCRIPT_URL + '?' + params.toString(), {
+          method: 'GET',
+          mode: 'no-cors'
+        });
+        // no-cors means we can't read the response, but if no exception was thrown it went through
+        document.getElementById('reg-form-inner').style.display = 'none';
+        document.getElementById('success-msg').style.display = 'block';
+      } catch (err) {
+        btn.textContent = 'Submit Registration';
+        btn.disabled = false;
+        alert('Something went wrong. Please try again or email us directly.');
+      }
+    }
+  </script>
+</body>
+
+</html>
