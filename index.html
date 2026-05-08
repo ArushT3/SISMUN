@@ -1567,7 +1567,7 @@
             </svg>
           </div>
           <h3>Conference Dates</h3>
-          <p>October 17–19, 2026. Three days of committees, social events, and closing ceremonies at Stonehill
+          <p>September 25–27, 2026. Three days of committees, social events, and closing ceremonies at Stonehill
             International School, Bengaluru.</p>
         </div>
         <div class="info-card">
@@ -1954,27 +1954,22 @@
             style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.5); margin-bottom:1rem;">
             SISMUN 2026</p>
           <h2>Secure your seat at the table.</h2>
-          <p style="color: white;">Fill out the delegation registration form to reserve your spots. Our team will
+          <p style="color: white;">Fill out the delegation registration form and the subsequent google form to reserve
+            your spots. Our team will
             confirm your registration
             and share further details.</p>
+
+          <p style="color: white;"><br>Delegate Fee: 2,000 INR</p>
 
           <div class="reg-timeline">
             <h3>Important dates</h3>
             <div class="timeline-item">
-              <div class="tl-dot done"></div>
-              <div><small>Applications open</small><span>1 September 2026</span></div>
-            </div>
-            <div class="timeline-item">
-              <div class="tl-dot done"></div>
-              <div><small>Early registration deadline</small><span>20 September 2026</span></div>
+              <div class="tl-dot"></div>
+              <div><small>Conference begins</small><span>25 September 2026</span></div>
             </div>
             <div class="timeline-item">
               <div class="tl-dot"></div>
-              <div><small>Position papers due</small><span>5 October 2026</span></div>
-            </div>
-            <div class="timeline-item">
-              <div class="tl-dot"></div>
-              <div><small>Conference begins</small><span>17 October 2026</span></div>
+              <div><small>Conference ends</small><span>27 September 2026</span></div>
             </div>
           </div>
         </div>
@@ -1993,34 +1988,36 @@
           <div class="form-row">
             <div class="form-group">
               <label>School Name</label>
-              <input type="text" placeholder="e.g. Inventure Academy">
+              <input type="text" placeholder="e.g. Inventure Academy" required>
             </div>
             <div class="form-group">
               <label>City</label>
-              <input type="text" placeholder="e.g. Bengaluru">
+              <input type="text" placeholder="e.g. Bengaluru" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
               <label>Faculty Advisor Name</label>
-              <input type="text" placeholder="Full name">
+              <input type="text" placeholder="Full name" required>
             </div>
             <div class="form-group">
               <label>Faculty Advisor Email</label>
-              <input type="email" placeholder="advisor@school.edu">
+              <input type="email" placeholder="advisor@school.edu" required>
             </div>
           </div>
+
+          <!-- add this inside your form, hidden from view -->
+          <input type="text" id="honeypot" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off">
 
           <div class="form-row">
             <div class="form-group">
               <label>Faculty Advisor Phone</label>
-              <input type="tel" placeholder="+91 00000 00000">
+              <input type="tel" placeholder="+91 00000 00000" required>
             </div>
             <div class="form-group">
               <label>Number of Delegates</label>
-              <input type="number" min="1" max="40" placeholder="e.g. 8">
+              <input type="number" min="1" max="40" placeholder="e.g. 8" required>
             </div>
-
           </div>
           <div class="form-group">
             <label>Additional Notes</label>
@@ -2028,8 +2025,9 @@
               placeholder="Any special requirements, accessibility needs, or questions for our team..."></textarea>
           </div>
           <button class="submit-btn" onclick="submitForm()">Submit Registration</button>
-          <p class="form-note">By submitting, you agree to SISMUN's code of conduct. Registration is confirmed only upon
-            receipt of confirmation email from our secretariat.</p>
+          <p class="form-note">By submitting, you agree to SISMUN's code of conduct. Registration can only be done after
+            filling out the delegate form sent via email. A confirmation email will then soon be sent by the secretariat
+            to the faculty advisor's email address.</p>
         </div>
         <div class="success-msg" id="success-msg">
           <strong style="font-size:17px; display:block; margin-bottom:0.5rem;">Registration received!</strong>
@@ -2121,7 +2119,7 @@
 
         <div class="cp-sidebar-card">
           <h4>Position Paper</h4>
-          <p>All delegates are required to submit a position paper before <strong>25 August 2026</strong>. Your paper
+          <p>All delegates are required to submit a position paper. Your paper
             should cover your country's stance on the agenda item and proposed solutions.</p>
           <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
               href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
@@ -2233,7 +2231,7 @@
 
         <div class="cp-sidebar-card">
           <h4>Position Paper</h4>
-          <p>All delegates are required to submit a position paper before <strong>25 August 2026</strong>. Your paper
+          <p>All delegates are required to submit a position paper. Your paper
             should cover your country's stance on the agenda item and proposed solutions.</p>
           <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
               href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
@@ -2338,7 +2336,7 @@
 
         <div class="cp-sidebar-card">
           <h4>Position Paper</h4>
-          <p>All delegates are required to submit a position paper before <strong>25 August 2026</strong>. Your paper
+          <p>All delegates are required to submit a position paper. Your paper
             should cover your country's stance on the agenda item and proposed solutions.</p>
           <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
               href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
@@ -2455,7 +2453,7 @@
 
         <div class="cp-sidebar-card">
           <h4>Position Paper</h4>
-          <p>All delegates are required to submit a position paper before <strong>25 August 2026</strong>. Your paper
+          <p>All delegates are required to submit a position paper. Your paper
             should cover your country's stance on the agenda item and proposed solutions.</p>
           <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
               href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
@@ -2489,6 +2487,7 @@
   </div>
 
   <script>
+
     function showPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
       document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
@@ -2508,6 +2507,21 @@
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkV4d2G9WS-MzHIZ46fh07K4PMunjAp1v2w7AO52I62WbyzEhWyVTEHDa1JuZH9-DXpA/exec";
 
     async function submitForm() {
+      const required = document.querySelectorAll('#reg-form-inner input[required]');
+      for (const field of required) {
+        if (!field.value.trim()) {
+          field.focus();
+          field.style.borderColor = 'var(--red)';
+          field.style.boxShadow = '0 0 0 3px rgba(192,39,45,0.2)';
+          setTimeout(() => {
+            field.style.borderColor = '';
+            field.style.boxShadow = '';
+          }, 2000);
+          return; // stop submission
+        }
+      }
+
+      // rest of your existing submitForm code below...
       const btn = document.querySelector('.submit-btn');
       btn.textContent = 'Submitting...';
       btn.disabled = true;
@@ -2535,7 +2549,10 @@
         btn.disabled = false;
         alert('Something went wrong. Please try again or email us directly.');
       }
+      if (document.getElementById('honeypot').value) return;
+
     }
+
   </script>
 </body>
 
