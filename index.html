@@ -580,6 +580,17 @@
       font-weight: 300;
     }
 
+    .page#page-bylaws .about-hero {
+      display: block;
+      grid-template-columns: unset;
+    }
+
+    .page#page-bylaws .about-hero h1 {
+      white-space: nowrap;
+      max-width: 100%;
+    }
+    
+
     .two-col {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -1424,6 +1435,123 @@
       font-size: 13px;
     }
 
+    /* ByLaws/Constitution PAGE */
+    .article-item {
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 8px;
+      background: var(--white);
+      transition: border-color 0.2s;
+    }
+
+    .article-item:hover {
+      border-color: var(--red);
+    }
+
+    .article-header {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+    }
+
+    .article-num {
+      width: 52px;
+      height: 52px;
+      border-radius: 8px;
+      background: var(--red);
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    .article-info {
+      flex: 1;
+    }
+
+    .article-info h3 {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 3px;
+    }
+
+    .article-info p {
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    .article-chevron {
+      color: var(--gray-400);
+      font-size: 18px;
+      transition: transform 0.3s;
+    }
+
+    .article-body {
+      display: none;
+      padding: 0 2rem 1.5rem 5.5rem;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .article-body.open {
+      display: block;
+    }
+
+    .article-header.open-header .article-chevron {
+      transform: rotate(180deg);
+    }
+
+    .bylaw-section {
+      margin-bottom: 1.5rem;
+    }
+
+    .bylaw-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .bylaw-section h4 {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+      margin: 1.25rem 0 0.6rem;
+    }
+
+    .bylaw-section ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .bylaw-section ul li {
+      font-size: 14px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      padding-left: 1rem;
+      border-left: 2px solid var(--gray-200);
+    }
+
+    .sub-list {
+      margin-top: 0.4rem;
+      margin-left: 1rem;
+    }
+
+    .sub-list li {
+      font-size: 13px !important;
+      border-left: 2px solid var(--gray-100) !important;
+    }
+
+    /* RESPONSIVE STYLES */
+
     @media (max-width: 768px) {
       .cp-grid {
         grid-template-columns: 1fr;
@@ -1496,6 +1624,7 @@
     <div class="nav-links">
       <a onclick="showPage('home')" class="active" id="nav-home">Home</a>
       <a onclick="showPage('about')" id="nav-about">About</a>
+      <a onclick="showPage('bylaws')" id="nav-bylaws">Bylaws</a>
       <a onclick="showPage('committees')" id="nav-committees">Committees</a>
       <a onclick="showPage('register')" class="nav-cta" id="nav-register">Register</a>
     </div>
@@ -2764,12 +2893,616 @@
   </div>
 
 
+
+
+  <!-- ────────── BYLAWS PAGE ────────── -->
+  <div class="page" id="page-bylaws">
+    <div class="about-hero">
+      <h1>Conference Bylaws</h1>
+      <p>The governing document of the Stonehill International School Model United Nations. These bylaws constitute the
+        highest authority of the conference.</p>
+    </div>
+
+    <div class="section">
+      <p class="section-label">Preamble</p>
+      <div class="body-text">
+        <p>The Stonehill International School Model United Nations (hereafter referred to as SISMUN or the conference)
+          is a conference designed to teach high school students diplomacy, international relations, and leadership
+          through hands-on experience. SISMUN is a student-led conference, run by a Secretariat monitored by teachers;
+          the conference decisions are made by the Secretariat. SISMUN is committed to upholding the values of the
+          United Nations, specifically peaceful debate, cooperation, and mutual respect.</p>
+        <p>The conference affirms that all personnel involved in any capacity in the conference are to uphold the values
+          of respect and academic integrity. Chairs and Secretariat personnel are to remain neutral in any debate and be
+          committed to ensuring respectful debate. SISMUN ensures equality of opportunity regardless of background,
+          religion, or political beliefs.</p>
+      </div>
+    </div>
+
+    <div style="padding: 0 3rem 4rem;">
+
+      <!-- ARTICLE I -->
+      <div class="article-item">
+        <div class="article-header" onclick="toggleArticle(this)">
+          <div class="article-num">I</div>
+          <div class="article-info">
+            <h3>Authority and Scope</h3>
+            <p>Secretariat authority, executive discretion, supremacy of bylaws, scope, and interpretation</p>
+          </div>
+          <div class="article-chevron">↓</div>
+        </div>
+        <div class="article-body">
+          <div class="bylaw-section">
+            <h4>Section 1 — Authority of the Secretariat</h4>
+            <ul>
+              <li>The Secretariat acts as a governing body and decides on all conference decisions.</li>
+              <li>The authority of the Secretariat is independent of specific committees and is the centralised
+                authority.</li>
+              <li>The Secretary-General acts on behalf of the Secretariat unless otherwise specified.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 2 — Executive Discretion</h4>
+            <ul>
+              <li>Any action taken under this section is temporary unless confirmed by the Secretariat.</li>
+              <li>The Secretary-General may act by his/her own discretion without reporting to the Secretariat in the
+                following situations:
+                <ul class="sub-list">
+                  <li>Procedural rulings requiring immediate resolution</li>
+                  <li>Temporary suspension or modification of the conference schedule</li>
+                  <li>Emergency logistical decisions</li>
+                  <li>Issuance of official conference communications or clarifications</li>
+                  <li>Temporary appointment or replacement of chairs or officers</li>
+                  <li>Immediate intervention to maintain order</li>
+                  <li>Temporary removal of a participant from a session</li>
+                  <li>Enforcement of bylaw standards on chairs and staff</li>
+                </ul>
+              </li>
+              <li>The Secretary-General and Deputy Secretary General may act at their mutual and explicit agreement
+                without reporting to the Secretariat in the following situations:
+                <ul class="sub-list">
+                  <li>Temporary suspension of a rule in unforeseen circumstances</li>
+                  <li>Emergency disciplinary actions beyond a warning</li>
+                  <li>Granting procedural exceptions not explicitly covered</li>
+                  <li>Declaration of procedural emergencies</li>
+                </ul>
+              </li>
+              <li>The Secretary-General may not act at his/her own discretion and must obtain simple majority
+                Secretariat approval in the following situations:
+                <ul class="sub-list">
+                  <li>Appointment or removal of senior Secretariat members</li>
+                  <li>Permanent removal or expulsion of a delegate or delegation</li>
+                  <li>Imposition of major or lasting disciplinary sanctions</li>
+                  <li>Structural changes to committees or conference format</li>
+                  <li>Adoption or amendment of bylaws</li>
+                  <li>Issuance of official post-conference statements</li>
+                  <li>Decisions affecting the legitimacy or reputation of the conference</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 3 — Supremacy of Bylaws</h4>
+            <ul>
+              <li>These bylaws are the highest authority.</li>
+              <li>Any individual or document related to the conference must adhere to the bylaws.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 4 — Scope</h4>
+            <ul>
+              <li>The authority of the bylaws applies before, during, and after the conference.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 5 — Interpretation</h4>
+            <ul>
+              <li>The Secretary-General and Deputy Secretary General have final authority in interpreting the bylaws.
+              </li>
+              <li>Interpretation rules:
+                <ul class="sub-list">
+                  <li>The interpretation of the bylaws is binding throughout the conference</li>
+                  <li>The spirit and goal of the conference guide interpretation</li>
+                  <li>If the interpretation is unanimously chosen by the Secretariat to be not guided by the spirit of
+                    the conference, they may change the interpretation</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLE II -->
+      <div class="article-item">
+        <div class="article-header" onclick="toggleArticle(this)">
+          <div class="article-num">II</div>
+          <div class="article-info">
+            <h3>Secretariat</h3>
+            <p>Structure, MUN Director, appointment, removal, roles, responsibilities, and decision-making</p>
+          </div>
+          <div class="article-chevron">↓</div>
+        </div>
+        <div class="article-body">
+          <div class="bylaw-section">
+            <h4>Section 1 — Structure</h4>
+            <ul>
+              <li>The Secretariat is led by the Secretary-General.</li>
+              <li>The Deputy Secretary-General serves as second-in-command.</li>
+              <li>The Secretariat shall consist of:
+                <ul class="sub-list">
+                  <li>Secretary-General</li>
+                  <li>Two Deputy Secretary-Generals</li>
+                  <li>President of General Assemblies</li>
+                  <li>Head of Admin and Logistics</li>
+                  <li>Assistant Head of Admin and Logistics</li>
+                  <li>Head of Delegate Affairs</li>
+                  <li>Head of Press</li>
+                  <li>Assistant Head of Press</li>
+                  <li>Head of Design</li>
+                  <li>Assistant Head of Design</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 2 — MUN Director</h4>
+            <ul>
+              <li>The teacher or teachers overseeing the conference (the MUN Director) shall not be considered members
+                of the Secretariat.</li>
+              <li>The MUN Director shall:
+                <ul class="sub-list">
+                  <li>Oversee the Model United Nations program of the school</li>
+                  <li>Provide guidance and supervision to the Secretariat</li>
+                  <li>Act as the primary connecting stakeholder between the school administration and the SISMUN
+                    Secretariat</li>
+                  <li>Ensure that the conference aligns with school policies and expectations</li>
+                </ul>
+              </li>
+              <li>The authority of the MUN Director is supervisory in nature and does not interfere with the operational
+                independence of the Secretariat, except where school policy, safety, or institutional requirements are
+                concerned.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 3 — Appointment and Removal</h4>
+            <ul>
+              <li>The Secretary-General and Deputy Secretary General may be appointed by overseeing teachers, following
+                the criteria outlined in Appendix A.</li>
+              <li>Appointment process:
+                <ul class="sub-list">
+                  <li>Heads are selected through an application and selection process involving the Secretary-General,
+                    Deputy Secretary General, and overseeing teachers</li>
+                  <li>Chairs are appointed at the discretion of the Secretary-General and Deputy Secretary Generals
+                    based on requirements of experience, competency, and neutrality</li>
+                </ul>
+              </li>
+              <li>Probation:
+                <ul class="sub-list">
+                  <li>All members of the Secretariat will be under a 3-month probationary period upon the date of
+                    appointment</li>
+                  <li>Members will receive an official appointment letter if and only if they pass their evaluation</li>
+                  <li>Evaluation will be done by the MUN Director and/or the MUN overseeing teachers</li>
+                </ul>
+              </li>
+              <li>Removal:
+                <ul class="sub-list">
+                  <li>Members will be removed upon unsuccessful evaluation during the probation period</li>
+                  <li>To remove a Head, the overseeing teachers, Secretary-General, and Deputy Secretary General must
+                    all consent</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 4 — Roles and Responsibilities</h4>
+            <ul>
+              <li><strong>Secretary-General:</strong> Serves as head of conference, oversees all Secretariat members,
+                makes final decisions, and ensures adherence to UN values.</li>
+              <li><strong>Deputy Secretary-Generals:</strong> Assists the SG, coordinates communication, acts on behalf
+                of the SG when required, and supervises Heads split evenly between the two DSGs.</li>
+              <li><strong>President of General Assemblies:</strong> Oversees all GA committees, ensures ROP is followed,
+                supervises and guides chairs, and maintains neutrality.</li>
+              <li><strong>Head of Admin and Logistics:</strong> Manages logistics, equipment, materials, venue setup and
+                operations, and supervises the logistics team.</li>
+              <li><strong>Head of Delegate Affairs:</strong> Manages delegate communication, registration, concerns, and
+                satisfaction.</li>
+              <li><strong>Head of Press:</strong> Oversees media coverage, documentation, press team, and publications.
+              </li>
+              <li><strong>Assistant Head of Press:</strong> Assists press operations and coordinates reporting teams.
+              </li>
+              <li><strong>Head of Design:</strong> Manages visual identity, promotional materials, and branding
+                consistency.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 5 — Application Requirement</h4>
+            <ul>
+              <li>All members of the Secretariat must have applied for their positions.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 6 — Authority Delegation</h4>
+            <ul>
+              <li>The Secretariat has the right to delegate certain tasks and authority to chairs and Heads.</li>
+              <li>Limitations:
+                <ul class="sub-list">
+                  <li>Chairs hold minimum authority as outlined</li>
+                  <li>Delegates do not have authority over one another</li>
+                  <li>Delegates have the right to appeal decisions made by a chair to the Secretary-General or Deputy
+                    Secretary General</li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 7 — Decision-Making</h4>
+            <ul>
+              <li>Decisions requiring democratic approval are subject to a majority vote.</li>
+              <li>In case of emergency, the Secretary-General and Deputy Secretary General may act and report to
+                teachers.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 8 — Neutrality</h4>
+            <ul>
+              <li>The Secretariat must remain neutral.</li>
+              <li>Overt bias is grounds for removal.</li>
+              <li>Removal of the Secretary-General or Deputy Secretary General requires unanimous approval, excluding
+                the individual.</li>
+              <li>A Head must receive two warnings before removal.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLE III -->
+      <div class="article-item">
+        <div class="article-header" onclick="toggleArticle(this)">
+          <div class="article-num">III</div>
+          <div class="article-info">
+            <h3>Committees and Chairs</h3>
+            <p>Establishment, chair authority, rules of procedure, conduct of debate, and equality</p>
+          </div>
+          <div class="article-chevron">↓</div>
+        </div>
+        <div class="article-body">
+          <div class="bylaw-section">
+            <h4>Section 1 — Establishment</h4>
+            <ul>
+              <li>The Secretary-General and Deputy Secretary General determine committees and topics.</li>
+              <li>Committee classification follows UN standards unless otherwise specified.</li>
+              <li>Committees may not create mandates outside their agenda.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 2 — Authority of Chairs</h4>
+            <ul>
+              <li>Committee leadership controls debate structure, recognition of speakers, and procedural motions.</li>
+              <li>Authority applies only within the committee.</li>
+              <li>Chairs cannot override bylaws or Secretariat decisions.</li>
+              <li>Head chairs must be from outside Stonehill International School.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 3 — Rules of Procedure</h4>
+            <ul>
+              <li>All committees operate under the Rules of Procedure (ROP).</li>
+              <li>Rules apply equally to all delegates.</li>
+              <li>Specialised committees may follow separate ROP.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 4 — Conduct of Debate</h4>
+            <ul>
+              <li>Debate must be respectful, relevant, and orderly.</li>
+              <li>Disruptive behavior, harassment, or obstruction are grounds for disciplinary action.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 5 — Powers of Chairs</h4>
+            <ul>
+              <li>Chairs may issue warnings.</li>
+              <li>Chairs may gag delegates for up to 15 minutes.</li>
+              <li>Chairs may call delegates to order.</li>
+              <li>Chairs may open and close debate.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 6 — Equality</h4>
+            <ul>
+              <li>All delegates have equal opportunity.</li>
+              <li>Discrimination is grounds for removal of a chair.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 7 — Removal and Compensation</h4>
+            <ul>
+              <li>Removal of chairs requires a two-thirds majority including leadership approval.</li>
+              <li>Chairs are entitled to compensation as outlined.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLE IV -->
+      <div class="article-item">
+        <div class="article-header" onclick="toggleArticle(this)">
+          <div class="article-num">IV</div>
+          <div class="article-info">
+            <h3>Delegates</h3>
+            <p>Representation, rights, conduct, academic integrity, limitations, and appeals</p>
+          </div>
+          <div class="article-chevron">↓</div>
+        </div>
+        <div class="article-body">
+          <div class="bylaw-section">
+            <h4>Section 1 — Representation</h4>
+            <ul>
+              <li>Delegates are assigned delegations.</li>
+              <li>Must not represent personal beliefs.</li>
+              <li>Must comply with chair rulings.</li>
+              <li>Must remain in character.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 2 — Rights</h4>
+            <ul>
+              <li>Delegates have the right to participate in debate.</li>
+              <li>Delegates have the right to speak when recognised.</li>
+              <li>Delegates have the right to submit motions and documents.</li>
+              <li>Delegates have the right to vote.</li>
+              <li>Delegates have the right to equal treatment and respect.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 3 — Conduct</h4>
+            <ul>
+              <li>Delegates must maintain parliamentary language.</li>
+              <li>Discrimination, harassment, or offensive behavior is prohibited.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 4 — Academic Integrity</h4>
+            <ul>
+              <li>Delegates must produce original work.</li>
+              <li>Plagiarism and falsification are grounds for disciplinary action.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 5 — Limitations</h4>
+            <ul>
+              <li>Delegates may not exercise authority over others.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 6 — Appeals</h4>
+            <ul>
+              <li>Delegates may appeal chair rulings and must receive justification.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLE V -->
+      <div class="article-item">
+        <div class="article-header" onclick="toggleArticle(this)">
+          <div class="article-num">V</div>
+          <div class="article-info">
+            <h3>Disciplinary Action</h3>
+            <p>Authority, scope, grounds, measures, and procedure</p>
+          </div>
+          <div class="article-chevron">↓</div>
+        </div>
+        <div class="article-body">
+          <div class="bylaw-section">
+            <h4>Section 1 — Authority and Scope</h4>
+            <ul>
+              <li>The authority to enforce discipline rests with the Secretariat.</li>
+              <li>Applies to delegates, chairs, executive board members, and volunteers.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 2 — Grounds</h4>
+            <ul>
+              <li>Disruptive behavior</li>
+              <li>Harassment or intimidation</li>
+              <li>Rule violations</li>
+              <li>Academic dishonesty</li>
+              <li>Possession of prohibited substances</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 3 — Measures</h4>
+            <ul>
+              <li>Verbal warning</li>
+              <li>Written warning</li>
+              <li>Loss of privileges</li>
+              <li>Temporary removal</li>
+              <li>Disqualification from awards</li>
+              <li>Expulsion</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 4 — Procedure</h4>
+            <ul>
+              <li>Violations may be reported by authorized individuals.</li>
+              <li>The accused may respond.</li>
+              <li>Decisions are binding.</li>
+              <li>Emergency action may be taken immediately.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLE VI -->
+      <div class="article-item">
+        <div class="article-header" onclick="toggleArticle(this)">
+          <div class="article-num">VI</div>
+          <div class="article-info">
+            <h3>Heads of Departments</h3>
+            <p>Authority, oversight, and responsibilities of each department head</p>
+          </div>
+          <div class="article-chevron">↓</div>
+        </div>
+        <div class="article-body">
+          <div class="bylaw-section">
+            <h4>Section 1 — Authority</h4>
+            <ul>
+              <li>Heads operate within their respective responsibilities under the supervision of the Deputy Secretary
+                General and Secretary-General.</li>
+              <li>Decisions made by Heads may be overruled by the Secretary-General or Deputy Secretary-General.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 2 — Responsibilities</h4>
+            <ul>
+              <li><strong>Head of Admin and Logistics:</strong> Responsible for equipment, materials, venue logistics,
+                and managing the logistics team.</li>
+              <li><strong>Head of Delegate Affairs:</strong> Handles delegate communication, support, registration, and
+                delegate experience.</li>
+              <li><strong>Head of Press:</strong> Oversees media, reporting, publications, and manages the press team.
+              </li>
+              <li><strong>Assistant Head of Press:</strong> Supports press coordination and content.</li>
+              <li><strong>Head of Design:</strong> Oversees visual branding and design, and collaborates with press and
+                media teams.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARTICLE VII -->
+      <div class="article-item">
+        <div class="article-header" onclick="toggleArticle(this)">
+          <div class="article-num">VII</div>
+          <div class="article-info">
+            <h3>Final Provisions</h3>
+            <p>Implementation, supremacy, validity, traditions, good faith, language, publications, and amendments</p>
+          </div>
+          <div class="article-chevron">↓</div>
+        </div>
+        <div class="article-body">
+          <div class="bylaw-section">
+            <h4>Section 1 — Implementation</h4>
+            <ul>
+              <li>These bylaws take effect on the date of voting.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 2 — Supremacy</h4>
+            <ul>
+              <li>These bylaws supersede the Rules of Procedure.</li>
+              <li>Secretariat interpretations supersede committee decisions.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 3 — Validity</h4>
+            <ul>
+              <li>Invalid clauses do not affect the remainder of the document.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 4 — Traditions</h4>
+            <ul>
+              <li>Unofficial procedures do not carry forward.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 5 — Good Faith</h4>
+            <ul>
+              <li>Authority must be used in good faith.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 6 — Language</h4>
+            <ul>
+              <li>The official language is English.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 7 — Publications</h4>
+            <ul>
+              <li>The Secretariat may publish outcomes.</li>
+              <li>Publication does not imply political support.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Section 8 — Amendments</h4>
+            <ul>
+              <li>Amendments may only be proposed by the Secretary-General or overseeing teachers.</li>
+              <li>Requires unanimous approval.</li>
+              <li>Must occur before the conference.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- APPENDIX A -->
+      <div class="article-item">
+        <div class="article-header" onclick="toggleArticle(this)">
+          <div class="article-num" style="font-size: 13px;">APP A</div>
+          <div class="article-info">
+            <h3>Appendix A</h3>
+            <p>Selection criteria for Secretary-General and Deputy Secretary-General</p>
+          </div>
+          <div class="article-chevron">↓</div>
+        </div>
+        <div class="article-body">
+          <div class="bylaw-section">
+            <h4>Eligibility Requirements</h4>
+            <ul>
+              <li><strong>Age:</strong> Must be at least 15 years old at the time of application.</li>
+              <li><strong>MUN Experience:</strong> Must have attended a minimum of five (5) MUN conferences.</li>
+              <li><strong>Leadership Experience:</strong> Must have served as a Chair or Co-Chair in at least one MUN
+                committee.</li>
+              <li><strong>Application Compliance:</strong> Must have submitted a complete application within the
+                designated period.</li>
+              <li><strong>Interview Requirement:</strong> Must have attended and completed the official interview
+                process.</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Preferred Qualifications</h4>
+            <ul>
+              <li>Demonstrated leadership in previous MUN or school activities</li>
+              <li>Strong communication and public speaking skills</li>
+              <li>Organisational and time-management abilities</li>
+              <li>Experience in event planning or conference organisation</li>
+              <li>Ability to work collaboratively within a team</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Selection Process</h4>
+            <ul>
+              <li>Fulfilment of eligibility requirements</li>
+              <li>Quality of application (essays, credentials)</li>
+              <li>Performance during the interview</li>
+              <li>Demonstrated leadership, initiative, and commitment to MUN</li>
+            </ul>
+          </div>
+          <div class="bylaw-section">
+            <h4>Final Decision</h4>
+            <ul>
+              <li>The final selection will be made by the organising committee/advisory board, based on overall merit
+                and alignment with the responsibilities of the role.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+
   <footer>
     <div class="f-logo">SIS<span>MUN</span></div>
     <p>Stonehill International School Model United Nations</p>
     <div class="f-links">
       <a onclick="showPage('home')">Home</a>
       <a onclick="showPage('about')">About</a>
+      <a onclick="showPage('bylaws')" id="nav-bylaws">Bylaws</a>
       <a onclick="showPage('committees')">Committees</a>
       <a onclick="showPage('register')">Register</a>
     </div>
@@ -2777,7 +3510,21 @@
     <p class="f-copy">© 2026 SISMUN — Stonehill International School. All rights reserved.</p>
   </footer>
 
+
+
+
   <script>
+
+    function toggleArticle(el) {
+      const body = el.nextElementSibling;
+      const isOpen = body.classList.contains('open');
+      document.querySelectorAll('.article-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.article-header').forEach(h => h.classList.remove('open-header'));
+      if (!isOpen) {
+        body.classList.add('open');
+        el.classList.add('open-header');
+      }
+    }
 
     function showPage(id) {
       document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
