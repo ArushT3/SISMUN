@@ -515,6 +515,76 @@
       letter-spacing: 0.05em;
     }
 
+    .countdown-section {
+      background: var(--gray-900);
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: -3rem;
+    }
+
+    .countdown-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.5rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 2rem;
+    }
+
+    .countdown-grid {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+
+    .countdown-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      padding: 2rem 2.5rem;
+      min-width: 120px;
+    }
+
+    .countdown-num {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 900;
+      color: var(--red);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .countdown-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.4);
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+
+    .countdown-sep {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.2);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .countdown-card {
+        min-width: 80px;
+        padding: 1.25rem 1rem;
+      }
+
+      .countdown-sep {
+        font-size: 2rem;
+      }
+    }
+
     /* ── ABOUT PAGE ── */
     .about-hero {
       background: var(--gray-900);
@@ -1776,6 +1846,31 @@
       <button class="btn-primary" style="background:var(--red);color:var(--white);"
         onclick="showPage('register')">Register your delegation</button>
     </div> -->
+
+    <div class="countdown-section">
+      <h2 class="countdown-title">SISMUN 2026 begins in</h2>
+      <div class="countdown-grid">
+        <div class="countdown-card">
+          <div class="countdown-num" id="cd-days">00</div>
+          <div class="countdown-label">Days</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-card">
+          <div class="countdown-num" id="cd-hours">00</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-card">
+          <div class="countdown-num" id="cd-minutes">00</div>
+          <div class="countdown-label">Minutes</div>
+        </div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-card">
+          <div class="countdown-num" id="cd-seconds">00</div>
+          <div class="countdown-label">Seconds</div>
+        </div>
+      </div>
+    </div>
 
   </div>
 
@@ -3567,6 +3662,33 @@
       document.querySelectorAll('.committee-body').forEach(b => b.classList.remove('open'));
       if (!isOpen) body.classList.add('open');
     }
+
+    function updateCountdown() {
+      const target = new Date('2026-09-25T08:00:00+05:30');
+      const now = new Date();
+      const diff = target - now;
+
+      if (diff <= 0) {
+        document.getElementById('cd-days').textContent = '00';
+        document.getElementById('cd-hours').textContent = '00';
+        document.getElementById('cd-minutes').textContent = '00';
+        document.getElementById('cd-seconds').textContent = '00';
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('cd-days').textContent = String(days).padStart(2, '0');
+      document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
 
     const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzkV4d2G9WS-MzHIZ46fh07K4PMunjAp1v2w7AO52I62WbyzEhWyVTEHDa1JuZH9-DXpA/exec";
 
