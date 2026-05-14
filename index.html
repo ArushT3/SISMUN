@@ -1710,6 +1710,269 @@
       font-size: 13px !important;
     }
 
+    /* ── ACCOMMODATION PAGE ── */
+
+    .accom-hero {
+      background: var(--gray-900);
+      padding: 5rem 3rem 4rem;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 4px solid var(--red);
+    }
+
+    .accom-hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 5vw, 4.5rem);
+      font-weight: 900;
+      color: var(--white);
+      max-width: 700px;
+      line-height: 1.1;
+    }
+
+    .accom-hero p {
+      font-size: 17px;
+      color: rgba(255, 255, 255, 0.6);
+      max-width: 550px;
+      line-height: 1.7;
+      margin-top: 1.5rem;
+      font-weight: 300;
+    }
+
+    .hotel-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 3rem;
+    }
+
+    .hotel-image {
+      width: 100%;
+      height: 280px;
+      background: linear-gradient(135deg, #2a1f1a 0%, #4a3020 50%, #2a1f1a 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hotel-image-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 900;
+      color: rgba(255, 255, 255, 0.08);
+      letter-spacing: 0.05em;
+      text-align: center;
+      user-select: none;
+    }
+
+    .hotel-image-badge {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: var(--red);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 4px;
+    }
+
+    .hotel-image-stars {
+      position: absolute;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      color: var(--gold);
+      font-size: 18px;
+      letter-spacing: 3px;
+    }
+
+    .hotel-body {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 0;
+      align-items: start;
+    }
+
+    .hotel-main {
+      padding: 2.5rem;
+      border-right: 1px solid var(--gray-200);
+    }
+
+    .hotel-main h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-bottom: 0.25rem;
+    }
+
+    .hotel-main .hotel-location {
+      font-size: 13px;
+      color: var(--gray-400);
+      margin-bottom: 1.25rem;
+    }
+
+    .hotel-main .hotel-location span {
+      color: var(--red);
+      font-weight: 600;
+    }
+
+    .hotel-desc {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--gray-700);
+      margin-bottom: 1.75rem;
+    }
+
+    .hotel-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.6rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hotel-feature {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--gray-700);
+    }
+
+    .hotel-feature-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--red);
+      flex-shrink: 0;
+    }
+
+    .hotel-contact {
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--gray-100);
+    }
+
+    .hotel-contact h4 {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+
+    .hotel-contact p {
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.8;
+    }
+
+    .hotel-contact a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    .hotel-contact a:hover {
+      text-decoration: underline;
+    }
+
+    .hotel-sidebar {
+      padding: 2rem;
+    }
+
+    .hotel-sidebar h4 {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    .room-type {
+      border: 1px solid var(--gray-200);
+      border-radius: 6px;
+      padding: 1.25rem;
+      margin-bottom: 0.75rem;
+      transition: border-color 0.2s;
+    }
+
+    .room-type:hover {
+      border-color: var(--red);
+    }
+
+    .room-type-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .room-type-desc {
+      font-size: 12px;
+      color: var(--gray-400);
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .room-type-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--red);
+    }
+
+    .room-type-price small {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 11px;
+      color: var(--gray-400);
+      font-weight: 400;
+    }
+
+    .hotel-note {
+      background: var(--red-pale);
+      border: 1px solid rgba(192, 39, 45, 0.15);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin: 3rem;
+      margin-top: 0;
+    }
+
+    .hotel-note strong {
+      color: var(--red);
+    }
+
+    @media (max-width: 768px) {
+      .hotel-body {
+        grid-template-columns: 1fr;
+      }
+
+      .hotel-main {
+        border-right: none;
+        border-bottom: 1px solid var(--gray-200);
+      }
+
+      .hotel-card,
+      .hotel-note {
+        margin: 1.5rem;
+      }
+
+      .hotel-features {
+        grid-template-columns: 1fr;
+      }
+
+      .accom-hero {
+        padding: 3rem 1.5rem;
+      }
+    }
+
     /* RESPONSIVE STYLES */
 
     @media (max-width: 768px) {
@@ -1785,6 +2048,7 @@
       <a onclick="showPage('home')" class="active" id="nav-home">Home</a>
       <a onclick="showPage('about')" id="nav-about">About</a>
       <a onclick="showPage('bylaws')" id="nav-bylaws">Bylaws</a>
+      <a onclick="showPage('accommodations')" id="nav-accommodations">Accommodations</a>
       <a onclick="showPage('committees')" id="nav-committees">Committees</a>
       <a onclick="showPage('register')" class="nav-cta" id="nav-register">Register</a>
     </div>
@@ -3714,6 +3978,126 @@
 
   </div>
 
+  <!-- ────────── ACCOMMODATIONS PAGE ────────── -->
+  <div class="page" id="page-accommodations">
+    <div class="accom-hero">
+      <p class="section-label">SISMUN 2026</p>
+      <h1>Accommodations</h1>
+      <p>We've partnered with a nearby hotel to offer comfortable overnight stays for visiting delegates and faculty
+        advisors attending SISMUN 2026.</p>
+    </div>
+
+    <div class="hotel-card">
+      <div class="hotel-image">
+        <div class="hotel-image-text">THE BELVEDERE</div>
+        <div class="hotel-image-badge">Official SISMUN Partner Hotel</div>
+        <div class="hotel-image-stars">★★★★</div>
+      </div>
+
+      <div class="hotel-body">
+        <div class="hotel-main">
+          <h2>The Belvedere Bengaluru</h2>
+          <p class="hotel-location">
+            14 Bellary Road, Hebbal, Bengaluru, Karnataka 560024 &nbsp;·&nbsp;
+            <span>~8 mins from Stonehill</span>
+          </p>
+          <p class="hotel-desc">The Belvedere Bengaluru is a modern four-star hotel situated along Bellary Road, making
+            it one of the most conveniently located properties for delegates attending SISMUN 2026 at Stonehill
+            International School. The hotel offers spacious, well-appointed rooms, a rooftop restaurant, a fully
+            equipped fitness centre, and reliable high-speed Wi-Fi throughout — everything delegates and faculty
+            advisors need for a comfortable stay during the conference.</p>
+
+          <div class="hotel-features">
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Complimentary Wi-Fi
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Daily breakfast included
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Conference shuttle service
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>24-hour front desk
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Rooftop restaurant & bar
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Fitness centre access
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Air-conditioned rooms
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Room service available
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Laundry service
+            </div>
+            <div class="hotel-feature">
+              <div class="hotel-feature-dot"></div>Free parking on premises
+            </div>
+          </div>
+
+          <div class="hotel-contact">
+            <h4>Contact the hotel directly</h4>
+            <p>
+              📞 &nbsp;+91 80 4521 7890<br>
+              ✉️ &nbsp;<a href="mailto:reservations@thebelvederebbe.in">reservations@thebelvederebbe.in</a><br>
+              🌐 &nbsp;<a href="#">www.thebelvederebengaluru.in</a><br><br>
+              When booking, mention <strong>"SISMUN 2026"</strong> to receive the conference rate.
+            </p>
+          </div>
+        </div>
+
+        <div class="hotel-sidebar">
+          <h4>Room Types & Rates</h4>
+
+          <div class="room-type">
+            <div class="room-type-name">Standard Room</div>
+            <div class="room-type-desc">Single or twin beds, city view, ideal for individual delegates.</div>
+            <div class="room-type-price">₹3,200 <small>/ night incl. breakfast</small></div>
+          </div>
+
+          <div class="room-type">
+            <div class="room-type-name">Shared Twin Room</div>
+            <div class="room-type-desc">Twin beds for two delegates sharing — most popular option.</div>
+            <div class="room-type-price">₹2,100 <small>/ person / night incl. breakfast</small></div>
+          </div>
+
+          <div class="room-type">
+            <div class="room-type-name">Faculty Suite</div>
+            <div class="room-type-desc">Spacious suite with work desk, recommended for faculty advisors.</div>
+            <div class="room-type-price">₹4,800 <small>/ night incl. breakfast</small></div>
+          </div>
+
+          <div class="room-type">
+            <div class="room-type-name">Triple Room</div>
+            <div class="room-type-desc">Three single beds, ideal for small delegations sharing a room.</div>
+            <div class="room-type-price">₹1,800 <small>/ person / night incl. breakfast</small></div>
+          </div>
+
+          <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid var(--gray-100);">
+            <h4>Check-in / Check-out</h4>
+            <p style="font-size: 13px; color: var(--gray-700); line-height: 1.8;">
+              <strong>Check-in:</strong> 24 September 2026, from 2:00 PM<br>
+              <strong>Check-out:</strong> 27 September 2026, by 11:00 AM<br>
+              <strong>Cancellation:</strong> Free cancellation up to 7 days before check-in
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hotel-note">
+      <strong>Please note:</strong> SISMUN does not manage hotel bookings directly. Delegates and faculty advisors are
+      responsible for making their own reservations with The Belvedere Bengaluru. Rooms are available on a first-come,
+      first-served basis — we recommend booking early. Always mention <strong>"SISMUN 2026"</strong> when reserving to
+      receive the negotiated conference rate.
+    </div>
+  </div>
+
 
 
 
@@ -3724,8 +4108,9 @@
       <a onclick="showPage('home')">Home</a>
       <a onclick="showPage('about')">About</a>
       <a onclick="showPage('bylaws')" id="nav-bylaws">Bylaws</a>
+      <a onclick="showPage('accommodations')" id="nav-accommodations">Accommodations</a>
       <a onclick="showPage('committees')">Committees</a>
-      <a onclick="showPage('register')">Register</a>
+      <a onclick="showPage('register')" id="nav-register">Register</a>
     </div>
     <div class="f-divider"></div>
     <p class="f-copy">© 2026 SISMUN — Stonehill International School. All rights reserved.</p>
