@@ -1158,6 +1158,103 @@
       font-weight: 500;
     }
 
+    .reg-option {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      padding: 1.75rem;
+      border: 1.5px solid var(--gray-200);
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .reg-option:hover {
+      border-color: var(--red);
+      box-shadow: 0 4px 20px rgba(192, 39, 45, 0.08);
+    }
+
+    .reg-option-icon {
+      width: 52px;
+      height: 52px;
+      flex-shrink: 0;
+      background: var(--red-pale);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .reg-option-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--red);
+    }
+
+    .reg-option-info {
+      flex: 1;
+    }
+
+    .reg-option-info h3 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-bottom: 4px;
+    }
+
+    .reg-option-info p {
+      font-size: 13px;
+      color: var(--gray-400);
+      line-height: 1.6;
+    }
+
+    .reg-option-btn {
+      flex-shrink: 0;
+      background: var(--red);
+      color: var(--white);
+      padding: 10px 20px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+
+    .reg-option-btn:hover {
+      background: var(--red-dark);
+      transform: translateY(-1px);
+    }
+
+    .reg-note {
+      background: var(--red-pale);
+      border: 1px solid rgba(192, 39, 45, 0.15);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-top: 1.5rem;
+    }
+
+    .reg-note strong {
+      color: var(--red);
+    }
+
+    @media (max-width: 768px) {
+      .reg-option {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .reg-option-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
     .reg-form-wrap {
       background: var(--off-white);
       padding: 4rem 3rem;
@@ -2614,7 +2711,8 @@
             confirm your registration
             and share further details.</p>
 
-          <p style="color: white;"><br>Delegate Fee: 2,200 INR</p>
+          <p style="color: white;"><br>Delegate Fee: 2,200 INR (Inclusive of GST)<br>After paying the fee, no refunds
+            will be issued.</p>
 
           <div class="reg-timeline">
             <h3>Important dates</h3>
@@ -2637,7 +2735,71 @@
         </div>
       </div>
 
+
       <div class="reg-form-wrap">
+        <h2>Register for SISMUN 2026</h2>
+        <p style="font-size: 15px; color: var(--gray-400); line-height: 1.7; margin-bottom: 2.5rem;">Select the
+          registration type that applies to you. Both forms will open in a new tab.</p>
+
+        <div class="reg-option">
+          <div class="reg-option-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4" />
+              <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" />
+            </svg>
+          </div>
+          <div class="reg-option-info">
+            <h3>Individual Registration (Inside India)</h3>
+            <p>For delegates registering independently, not as part of a school delegation or if you are part of Stonehill International School.</p>
+          </div>
+          <a href="https://forms.gle/8Q3W4TP8wnzPznks9" target="_blank" class="reg-option-btn">Register →</a>
+        </div>
+
+        <div class="reg-option">
+          <div class="reg-option-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="9" cy="8" r="3" />
+              <circle cx="17" cy="8" r="3" />
+              <path d="M2 20c0-3.5 3-6 7-6" />
+              <path d="M22 20c0-3.5-3-6-7-6" />
+              <path d="M9 20c0-3.5 2.5-6 6-6s6 2.5 6 6" />
+            </svg>
+          </div>
+          <div class="reg-option-info">
+            <h3>Group / Delegation Registration (Inside India)</h3>
+            <p>For faculty advisors registering an entire school delegation. Complete one form per school.</p>
+          </div>
+          <a href="https://forms.gle/GSWwSnFPVQfr6gtY8" target="_blank" class="reg-option-btn">Register →</a>
+        </div>
+
+        <div class="reg-option">
+          <div class="reg-option-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="9" cy="8" r="3" />
+              <circle cx="17" cy="8" r="3" />
+              <path d="M2 20c0-3.5 3-6 7-6" />
+              <path d="M22 20c0-3.5-3-6-7-6" />
+              <path d="M9 20c0-3.5 2.5-6 6-6s6 2.5 6 6" />
+            </svg>
+          </div>
+          <div class="reg-option-info">
+            <h3>International Group / Delegation Registration (Outside India)</h3>
+            <p>For faculty advisors registering an entire school delegation outside of India. Complete one form per school.</p>
+          </div>
+          <a href="https://forms.gle/placeholder" target="_blank" class="reg-option-btn">Register →</a>
+        </div>
+
+        <div class="reg-note">
+          If you are attending as part of a school group, ask your faculty
+          advisor to complete the Group Registration. Individual Registration is for delegates attending without a
+          school delegation.
+        </div>
+      </div>
+
+      <!-- <div class="reg-form-wrap">
         <h2>Delegation Registration</h2>
         <div id="reg-form-inner">
           <div class="form-row">
@@ -2662,9 +2824,9 @@
           </div>
 
           <!-- add this inside your form, hidden from view -->
-          <input type="text" id="honeypot" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off">
+      <!-- <input type="text" id="honeypot" name="honeypot" style="display:none;" tabindex="-1" autocomplete="off"> -->
 
-          <div class="form-row">
+      <!-- <div class="form-row">
             <div class="form-group">
               <label>Faculty Advisor Phone</label>
               <input type="tel" placeholder="+91 00000 00000" required>
@@ -2691,7 +2853,7 @@
           Thank you for registering with SISMUN 2026. Our secretariat will review your application and be in touch
           with you soon. We look forward to welcoming your delegation!
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 
