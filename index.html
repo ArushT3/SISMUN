@@ -688,7 +688,7 @@
 
     .letter-image {
       width: 100%;
-      max-width: 1000px;
+      min-width: 3rem;
       border-radius: 16px;
       overflow: hidden;
       min-height: 320px;
@@ -1252,6 +1252,90 @@
       .reg-option-btn {
         width: 100%;
         text-align: center;
+      }
+    }
+
+    .reg-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--gray-200);
+      margin-bottom: 2rem;
+    }
+
+    .reg-tab {
+      background: none;
+      border: none;
+      padding: 0.85rem 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-400);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .reg-tab:hover {
+      color: var(--gray-900);
+    }
+
+    .reg-tab.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+      font-weight: 600;
+    }
+
+    .reg-tab-content {
+      display: none;
+    }
+
+    .reg-tab-content.active {
+      display: block;
+    }
+
+    .chair-req-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .chair-req-card {
+      background: var(--off-white);
+      border: 1px solid var(--gray-200);
+      border-radius: 8px;
+      padding: 1.25rem;
+      transition: border-color 0.2s;
+    }
+
+    .chair-req-card:hover {
+      border-color: var(--red);
+    }
+
+    .chair-req-card h4 {
+      font-size: 12px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .chair-req-card p {
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .chair-req-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .reg-tab {
+        padding: 0.75rem 1rem;
+        font-size: 13px;
       }
     }
 
@@ -2320,24 +2404,31 @@
             <h2 class="section-title">A Letter From The Secretary-General</h2>
             <div class="body-text">
               <p>Dear Delegates,</p>
-              <p style="margin-top: -10px;">I am pleased to welcome you to SISMUN 2026. This conference brings together
-                delegates from grades 7–12,
-                ranging from beginners to experienced participants, each bringing a different perspective into
-                committee.
-                As SISMUN continues to grow, we are committed to building a space where serious debate and genuine
-                engagement are expected from every delegate.</p>
-              <p>At SISMUN, our focus is on realism, diplomacy, and competitiveness. We have placed strong emphasis on
-                organization, well-structured agendas, and capable chairs to ensure that committees are not only
-                efficient, but challenging and engaging. Delegates should expect a conference that pushes them to think
-                critically, negotiate effectively, and participate in debates that reflect the complexity of real-world
-                issues.</p>
-              <p>This conference is built on the expectation that delegates will take initiative. I encourage you to
-                speak
-                up, take risks, and engage fully in committee. Step beyond what is comfortable, contribute meaningfully,
-                and approach debate with intent. I look forward to seeing the level of discussion and collaboration that
-                SISMUN 2026 will produce.</p>
-              <p>Regards,</p>
-              <p style="margin-top: -22px; font-weight: bold;">Gil Wietzman</p>
+              <p style="margin-top: -10px;">It is my pleasure to welcome you to SISMUN 2026.</p>
+              <p>
+                Whether you are attending your first conference or returning with experience, I am excited to have you
+                join us. SISMUN brings together delegates from Grades 7–12, each with unique perspectives and ideas.
+                Over the course of this conference, you will have the opportunity to challenge your thinking, engage in
+                meaningful debate, and collaborate with others to address complex global issues.</p>
+
+              <p>Model United Nations is about much more than resolutions and awards. It is a platform to develop
+                confidence, strengthen critical thinking, and learn the value of diplomacy and cooperation. Some of the
+                most meaningful moments in committee come not from speaking the most, but from listening closely,
+                adapting your perspective, and building something greater than what you could achieve alone.
+              </p>
+
+              <p>Our Secretariat has worked hard to create a conference that is engaging, competitive, and rewarding. I
+                encourage each of you to participate actively, take initiative, and make the most of every moment you
+                are given.
+              </p>
+              <p>
+                Above all, I hope SISMUN 2026 becomes more than just a conference on your calendar — but an experience
+                that stays with you long after it ends.
+                On behalf of the entire Secretariat, I wish you the very best of luck, and I look forward to seeing
+                what SISMUN 2026 becomes through your ideas, effort, and voice.
+              </p>
+              <p>Warm regards,</p>
+              <p style="margin-top: -22px; font-weight: bold;">Vanisha Bondhade</p>
             </div>
           </div>
         </div>
@@ -2357,19 +2448,19 @@
         <div class="team-card">
           <div class="team-avatar">SG</div>
           <h4>Secretary General</h4>
-          <small>Gil Wietzman</small>
+          <small>Vanisha Bondhade</small>
           <p>Oversees all conference operations and sets the thematic direction for SISMUN.</p>
         </div>
         <div class="team-card">
           <div class="team-avatar">DSG</div>
-          <h4>Deputy Sec-Gen #1</h4>
+          <h4>Deputy Sec-Gen</h4>
           <small>Vivaan Sahu</small>
           <p>Supports the Secretary General and manages inter-committee coordination.</p>
         </div>
         <div class="team-card">
           <div class="team-avatar">DSG</div>
-          <h4>Deputy Sec-Gen #2</h4>
-          <small>Vanisha Bondhade</small>
+          <h4>Deputy Sec-Gen</h4>
+          <small>Arush Tiwary</small>
           <p>Supports the Secretary General and manages inter-committee coordination.</p>
         </div>
         <div class="team-card">
@@ -2377,6 +2468,12 @@
           <h4>President of General Assemblies</h4>
           <small>Naetrra Selva</small>
           <p>Oversees the general assemblies and ensures smooth functioning of the conference.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">DG</div>
+          <h4>Director General</h4>
+          <small>Dia Singhvi</small>
+          <p>Oversees the conference's daily operations and logistics.</p>
         </div>
         <div class="team-card">
           <div class="team-avatar">HDA</div>
@@ -2399,13 +2496,13 @@
         <div class="team-card">
           <div class="team-avatar">HD</div>
           <h4>Head of Design</h4>
-          <small>Arush Tiwary</small>
+          <small>Kian Ferreira</small>
           <p>Designs promotional materials and manages visual identity and consistency.</p>
         </div>
         <div class="team-card">
           <div class="team-avatar">AHD</div>
           <h4>Assistant Head of Design</h4>
-          <small>Kian Ferreira</small>
+          <small>Undecided</small>
           <p>Designs promotional materials and manages visual identity and consistency.</p>
         </div>
         <div class="team-card">
@@ -2426,21 +2523,18 @@
           <small>Shivani Shah</small>
           <p>Provides guidance and support to teachers and students involved in the Model United Nations program.</p>
         </div>
-      </div>
-      <div class="team-grid team-grid-two">
         <div class="team-card">
-          <div class="team-avatar">TA</div>
+          <div class="team-avatar">ML</div>
           <h4>MUN Lead</h4>
           <small>Severine Fumoux</small>
           <p>Provides guidance and support to teachers and students involved in the Model United Nations program.</p>
         </div>
         <div class="team-card">
-          <div class="team-avatar">TA</div>
+          <div class="team-avatar">MD</div>
           <h4>MUN Director</h4>
           <small>Edrian Echague</small>
           <p>Provides guidance and support to teachers and students involved in the Model United Nations program.</p>
         </div>
-
       </div>
     </div>
 
@@ -2735,8 +2829,109 @@
         </div>
       </div>
 
-
       <div class="reg-form-wrap">
+        <!-- Tabs -->
+        <div class="reg-tabs">
+          <button class="reg-tab active" onclick="switchRegTab('delegates', this)">Delegate Registration</button>
+          <button class="reg-tab" onclick="switchRegTab('chairs', this)">Chair Application</button>
+        </div>
+
+        <!-- Delegate Registration Tab -->
+        <div class="reg-tab-content active" id="reg-tab-delegates">
+          <p style="font-size: 15px; color: var(--gray-400); line-height: 1.7; margin-bottom: 2.5rem;">Select the
+            registration type that applies to you. Both forms will open in a new tab.</p>
+
+          <div class="reg-option">
+            <div class="reg-option-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="12" cy="8" r="4" />
+                <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" />
+              </svg>
+            </div>
+            <div class="reg-option-info">
+              <h3>Individual Registration (Inside India)</h3>
+              <p>For delegates registering independently, not as part of a school delegation or if you are part of
+                Stonehill International School.
+
+              </p>
+            </div>
+            <a href="https://forms.gle/5uC4NtQ7qdFmZTZE9" target="_blank" class="reg-option-btn">Register →</a>
+          </div>
+
+          <div class="reg-option">
+            <div class="reg-option-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3" />
+                <circle cx="17" cy="8" r="3" />
+                <path d="M2 20c0-3.5 3-6 7-6" />
+                <path d="M22 20c0-3.5-3-6-7-6" />
+                <path d="M9 20c0-3.5 2.5-6 6-6s6 2.5 6 6" />
+              </svg>
+            </div>
+            <div class="reg-option-info">
+              <h3>Group / Delegation Registration (Inside India)</h3>
+              <p>For faculty advisors registering an entire school delegation. Complete one form per school.</p>
+            </div>
+            <a href="https://forms.gle/UWLDdCkikJMDaHZf6" target="_blank" class="reg-option-btn">Register →</a>
+          </div>
+
+          <div class="reg-option">
+            <div class="reg-option-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <circle cx="9" cy="8" r="3" />
+                <circle cx="17" cy="8" r="3" />
+                <path d="M2 20c0-3.5 3-6 7-6" />
+                <path d="M22 20c0-3.5-3-6-7-6" />
+                <path d="M9 20c0-3.5 2.5-6 6-6s6 2.5 6 6" />
+              </svg>
+            </div>
+            <div class="reg-option-info">
+              <h3>International Group / Delegation Registration (Outside India)</h3>
+              <p>For faculty advisors registering an entire school delegation outside of India. Complete one form per
+                school.</p>
+            </div>
+            <a href="https://forms.gle/RUzZC4P5A5oda4Sb7" target="_blank" class="reg-option-btn">Register →</a>
+          </div>
+
+          <div class="reg-note">
+            If you are attending as part of a school group, ask your faculty advisor to complete the Group Registration.
+            Individual Registration is for delegates attending without a school delegation.
+          </div>
+        </div>
+
+        <!-- Chair Application Tab -->
+        <div class="reg-tab-content" id="reg-tab-chairs">
+          <p style="font-size: 15px; color: var(--gray-400); line-height: 1.7; margin-bottom: 2rem;">We are looking for
+            experienced, neutral, and committed individuals to chair committees at SISMUN 2026. Chairs must be at least
+            <strong>15</strong> years old at the time of the conference.</p>
+
+
+          <div class="reg-option">
+            <div class="reg-option-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                stroke-linejoin="round">
+                <rect x="8" y="2" width="8" height="4" rx="1" />
+                <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+                <path d="M12 11h4" />
+                <path d="M12 16h4" />
+                <path d="M8 11h.01" />
+                <path d="M8 16h.01" />
+              </svg>
+            </div>
+            <div class="reg-option-info">
+              <h3>Chair Application Form</h3>
+              <p>Submit your application, committee preferences, and MUN experience via the form below.</p>
+            </div>
+            <a href="https://forms.gle/UrxgRTdbVdgyF4m98" target="_blank" class="reg-option-btn">Apply →</a>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- <div class="reg-form-wrap">
         <h2>Register for SISMUN 2026</h2>
         <p style="font-size: 15px; color: var(--gray-400); line-height: 1.7; margin-bottom: 2.5rem;">Select the
           registration type that applies to you. Both forms will open in a new tab.</p>
@@ -2751,7 +2946,8 @@
           </div>
           <div class="reg-option-info">
             <h3>Individual Registration (Inside India)</h3>
-            <p>For delegates registering independently, not as part of a school delegation or if you are part of Stonehill International School.</p>
+            <p>For delegates registering independently, not as part of a school delegation or if you are part of
+              Stonehill International School.</p>
           </div>
           <a href="https://forms.gle/8Q3W4TP8wnzPznks9" target="_blank" class="reg-option-btn">Register →</a>
         </div>
@@ -2787,9 +2983,10 @@
           </div>
           <div class="reg-option-info">
             <h3>International Group / Delegation Registration (Outside India)</h3>
-            <p>For faculty advisors registering an entire school delegation outside of India. Complete one form per school.</p>
+            <p>For faculty advisors registering an entire school delegation outside of India. Complete one form per
+              school.</p>
           </div>
-          <a href="https://forms.gle/placeholder" target="_blank" class="reg-option-btn">Register →</a>
+          <a href="https://forms.gle/RUzZC4P5A5oda4Sb7" target="_blank" class="reg-option-btn">Register →</a>
         </div>
 
         <div class="reg-note">
@@ -2797,7 +2994,7 @@
           advisor to complete the Group Registration. Individual Registration is for delegates attending without a
           school delegation.
         </div>
-      </div>
+      </div> -->
 
       <!-- <div class="reg-form-wrap">
         <h2>Delegation Registration</h2>
@@ -3683,6 +3880,7 @@
                   <li>Secretary-General</li>
                   <li>Two Deputy Secretary-Generals</li>
                   <li>President of General Assemblies</li>
+                  <li>Director General</li>
                   <li>Head of Admin and Logistics</li>
                   <li>Assistant Head of Admin and Logistics</li>
                   <li>Head of Delegate Affairs</li>
@@ -3755,6 +3953,9 @@
                 of the SG when required, and supervises Heads split evenly between the two DSGs.</li>
               <li><strong>President of General Assemblies:</strong> Oversees all GA committees, ensures ROP is followed,
                 supervises and guides chairs, and maintains neutrality.</li>
+              <li><strong>Director General:</strong> Assists the President of General Assemblies with different
+                responsibilities and completes tasks that seem vague that don't fall under the purview of other
+                Secretariat members.</li>
               <li><strong>Head of Admin and Logistics:</strong> Manages logistics, equipment, materials, venue setup and
                 operations, and supervises the logistics team.</li>
               <li><strong>Head of Delegate Affairs:</strong> Manages delegate communication, registration, concerns, and
@@ -3765,6 +3966,8 @@
               </li>
               <li><strong>Head of Design:</strong> Manages visual identity, promotional materials, and branding
                 consistency.</li>
+              <li><strong>Assistant Head of Design:</strong> Assists the Head of Design and supports branding
+                initiatives.</li>
             </ul>
           </div>
           <div class="bylaw-section">
@@ -4231,6 +4434,13 @@
         body.classList.add('open');
         el.classList.add('open-header');
       }
+    }
+
+    function switchRegTab(tab, el) {
+      document.querySelectorAll('.reg-tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.reg-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('reg-tab-' + tab).classList.add('active');
+      el.classList.add('active');
     }
 
     function showPage(id) {
