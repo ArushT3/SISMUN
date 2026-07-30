@@ -2406,7 +2406,7 @@
       </div>
     </div>
 
-    
+
 
     <div class="section letter-section">
       <div class="letter-grid">
@@ -2634,7 +2634,7 @@
         <p>Six carefully curated committees spanning global security, climate, development, and human rights. Find
           yours.</p>
       </div>
-      <span class="badge">6 committees open</span>
+      <span class="badge">7 committees open</span>
     </div>
 
     <div class="committee-list">
@@ -2769,6 +2769,40 @@
         </div>
       </div>
 
+      <!-- UNSC -->
+      <div class="committee-item">
+        <div class="committee-header" onclick="toggleCommittee(this)">
+          <div class="committee-tag">UNSC</div>
+          <div class="committee-info">
+            <h3>United Nations Security Council</h3>
+            <p>Agenda: Addressing the Escalation of Military Tensions in the Black Sea Following the Downing of a
+              Russian Su-35 Fighter Aircraft and Preventing Regional Conflict Between the Russian Federation, Ukraine,
+              and NATO</p>
+          </div>
+          <div class="committee-meta">
+            <span class="tag intermediate">Intermediate</span>
+          </div>
+        </div>
+        <div class="committee-body">
+          <h4>About the committee</h4>
+          <p>The United Nations Security Council convenes in emergency session following one of the most dangerous
+            escalations in the Black Sea region since the outbreak of the Russia-Ukraine war. The downing of a Russian
+            Su-35 has brought the Russian Federation, Ukraine, and NATO to the brink of direct confrontation. Delegates
+            must act swiftly and decisively to prevent a regional conflict from spiralling into something far worse.</p>
+          <h4>Key topics covered</h4>
+          <ul>
+            <li>Military escalation & de-escalation in active conflict zones</li>
+            <li>NATO's Article 5 & collective defence obligations</li>
+            <li>Russian Federation's military doctrine & red lines</li>
+            <li>Black Sea security frameworks</li>
+            <li>Emergency ceasefire & diplomatic mechanisms</li>
+          </ul>
+          <div style="margin-top: 1.25rem;">
+            <button class="btn-view-committee" onclick="showPage('unsc')">View Full Committee Page →</button>
+          </div>
+        </div>
+      </div>
+
       <!-- AD HOC -->
       <div class="committee-item">
         <div class="committee-header" onclick="toggleCommittee(this)">
@@ -2886,26 +2920,9 @@
 
         <!-- Delegate Registration Tab -->
         <div class="reg-tab-content active" id="reg-tab-delegates">
-          <p style="font-size: 15px; color: var(--gray-400); line-height: 1.7; margin-bottom: 2.5rem;">Select the
-            registration type that applies to you. Both forms will open in a new tab.</p>
 
-          <div class="reg-option">
-            <div class="reg-option-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="12" cy="8" r="4" />
-                <path d="M4 20c0-4 3.58-7 8-7s8 3 8 7" />
-              </svg>
-            </div>
-            <div class="reg-option-info">
-              <h3>Individual Registration (Inside India)</h3>
-              <p>For delegates registering independently, not as part of a school delegation or if you are part of
-                Stonehill International School.
 
-              </p>
-            </div>
-            <a href="https://forms.gle/5uC4NtQ7qdFmZTZE9" target="_blank" class="reg-option-btn">Register →</a>
-          </div>
+
 
           <div class="reg-option">
             <div class="reg-option-icon">
@@ -2919,42 +2936,24 @@
               </svg>
             </div>
             <div class="reg-option-info">
-              <h3>Group / Delegation Registration (Inside India)</h3>
-              <p>For faculty advisors registering an entire school delegation. Complete one form per school.</p>
+              <h3>Delegate Registration</h3>
+              <p>Click on the link to the side to register, whether you are an individual delegate or part of a school
+                delegation.</p>
             </div>
-            <a href="https://forms.gle/UWLDdCkikJMDaHZf6" target="_blank" class="reg-option-btn">Register →</a>
+            <a href="https://gavelling.com/conferences/stonehill-international-school-model-united-nations-ydkzm/apply"
+              target="_blank" class="reg-option-btn">Register →</a>
           </div>
 
-          <div class="reg-option">
-            <div class="reg-option-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
-                stroke-linejoin="round">
-                <circle cx="9" cy="8" r="3" />
-                <circle cx="17" cy="8" r="3" />
-                <path d="M2 20c0-3.5 3-6 7-6" />
-                <path d="M22 20c0-3.5-3-6-7-6" />
-                <path d="M9 20c0-3.5 2.5-6 6-6s6 2.5 6 6" />
-              </svg>
-            </div>
-            <div class="reg-option-info">
-              <h3>International Group / Delegation Registration (Outside India)</h3>
-              <p>For faculty advisors registering an entire school delegation outside of India. Complete one form per
-                school.</p>
-            </div>
-            <a href="https://forms.gle/RUzZC4P5A5oda4Sb7" target="_blank" class="reg-option-btn">Register →</a>
-          </div>
 
-          <div class="reg-note">
-            If you are attending as part of a school group, ask your faculty advisor to complete the Group Registration.
-            Individual Registration is for delegates attending without a school delegation.
-          </div>
+
         </div>
 
         <!-- Chair Application Tab -->
         <div class="reg-tab-content" id="reg-tab-chairs">
           <p style="font-size: 15px; color: var(--gray-400); line-height: 1.7; margin-bottom: 2rem;">We are looking for
             experienced, neutral, and committed individuals to chair committees at SISMUN 2026. Chairs must be at least
-            <strong>15</strong> years old at the time of the conference.
+            <strong>15</strong> years old at the time of the conference.<br>
+            <strong>Chair applications have closed.</strong>
           </p>
 
 
@@ -3553,6 +3552,131 @@
 
       </div>
     </div>
+  </div>
+
+  <!-- ────────── UNSC COMMITTEE PAGE ────────── -->
+  <div class="page" id="page-unsc">
+    <div class="committee-page-hero">
+      <p class="breadcrumb" onclick="showPage('committees')">← Committees / <span>UNSC</span></p>
+      <div class="committee-pills">
+        <div class="committee-pill red">Intermediate</div>
+        <div class="committee-pill">UNSC</div>
+        <div class="committee-pill">SISMUN 2026</div>
+      </div>
+      <h1 style="margin-top: 1.25rem;">United Nations<br>Security Council</h1>
+      <p class="agenda-label">Agenda: Addressing the Escalation of Military Tensions in the Black Sea Following the
+        Downing of a Russian Su-35 Fighter Aircraft and Preventing Regional Conflict Between the Russian Federation,
+        Ukraine, and NATO</p>
+    </div>
+
+    <div class="cp-grid">
+      <div class="cp-main">
+
+        <div class="cp-card">
+          <h3>Background & Context</h3>
+          <p>The Black Sea has long been one of the most strategically contested bodies of water in Europe — a critical
+            theatre in the ongoing conflict between Russia and Ukraine, and a flashpoint where NATO's eastern flank
+            meets Russian military ambition. Since the full-scale Russian invasion of Ukraine in February 2022, the
+            region has seen unprecedented militarisation: naval blockades, drone strikes on warships, and increasingly
+            aggressive aerial patrols have made the Black Sea one of the most dangerous airspaces in the world.</p>
+          <p>The situation has now reached a critical inflection point. A Russian Su-35 Flanker — one of Russia's most
+            advanced air superiority fighters — has been downed over the Black Sea in disputed circumstances. Russia
+            attributes the incident to a deliberate act of aggression by Ukrainian forces using Western-supplied air
+            defence systems. Ukraine and its NATO allies contest this account, claiming the aircraft was engaged after
+            violating agreed operational boundaries. Both sides have placed their forces on elevated readiness. NATO has
+            convened an emergency session under Article 4. Russia has issued stark warnings about consequences for those
+            it holds responsible.</p>
+          <p>The Security Council now faces its most acute test in years: can it serve as a credible forum for
+            de-escalation when two of the world's most powerful military blocs are on the edge of direct confrontation?
+            Delegates must navigate veto politics, competing narratives, and the ever-present risk that a diplomatic
+            failure could trigger a conflict with catastrophic consequences for the entire region.</p>
+        </div>
+
+        <div class="cp-card">
+          <h3>Key Issues for Debate</h3>
+          <ul>
+            <li><strong>Establishing the facts:</strong> What actually happened to the Su-35, and how can the Security
+              Council establish an independent account when all parties have strong incentives to control the narrative?
+            </li>
+            <li><strong>Preventing immediate escalation:</strong> What emergency mechanisms — ceasefires, military
+              hotlines, buffer zones — can the Council invoke to reduce the risk of further incidents?</li>
+            <li><strong>NATO's Article 5 obligations:</strong> If NATO member state assets were involved in the downing,
+              does this trigger collective defence obligations — and how does the Council respond to that possibility?
+            </li>
+            <li><strong>Russia's veto power:</strong> As a permanent member of the Security Council, Russia can veto any
+              resolution it opposes. How do delegates navigate this structural reality in a crisis directly involving
+              the Russian Federation?</li>
+            <li><strong>Black Sea security architecture:</strong> What longer-term frameworks — demilitarised corridors,
+              no-fly zones, confidence-building measures — could reduce the risk of future incidents?</li>
+            <li><strong>Information warfare:</strong> Both sides are actively shaping the narrative around the incident.
+              How does the Council distinguish credible intelligence from propaganda in real time?</li>
+          </ul>
+        </div>
+
+        <div class="cp-card">
+          <h3>Questions to Consider</h3>
+          <ul>
+            <li>What is your country's relationship with Russia, Ukraine, and NATO — and how does that shape your
+              position on this crisis?</li>
+            <li>How has your country previously responded to military incidents in contested airspace or international
+              waters?</li>
+            <li>What is the threshold at which this incident constitutes an act of war — and who has the authority to
+              make that determination?</li>
+            <li>How do you balance the need for immediate de-escalation with the importance of accountability for the
+              incident?</li>
+            <li>What role should independent international bodies — the OSCE, the UN Secretary-General — play in
+              investigating the incident?</li>
+            <li>What precedents from past Security Council crises — the Cuban Missile Crisis, the Gulf of Tonkin, MH17 —
+              are most instructive here?</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="cp-sidebar">
+
+        <div class="cp-sidebar-card">
+          <h4>Committee Details</h4>
+          <div class="detail-row"><span>Committee</span><span>UNSC</span></div>
+          <div class="detail-row"><span>Difficulty</span><span>Intermediate</span></div>
+          <div class="detail-row"><span>Delegates</span><span>15 (P5 + elected)</span></div>
+          <div class="detail-row"><span>Language</span><span>English</span></div>
+          <div class="detail-row"><span>Conference</span><span>SISMUN 2026</span></div>
+        </div>
+
+        <div class="cp-sidebar-card" style="border-color: var(--red);">
+          <h4>The P5 Veto</h4>
+          <p>The five permanent members of the Security Council — the United States, United Kingdom, France, China, and
+            Russia — each hold veto power over any substantive resolution. With Russia directly involved in this crisis,
+            the veto dynamic is central to this committee. Delegates must craft resolutions and strategies that account
+            for this structural reality.</p>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Dais</h4>
+          <p>Chair, Vice-Chair, and Rapporteur details will be announced closer to the conference date.</p>
+        </div>
+
+        <div class="cp-sidebar-card">
+          <h4>Position Paper</h4>
+          <p>All delegates are required to submit a position paper. Your paper should cover your country's stance on the
+            agenda item and proposed solutions.</p>
+          <p style="margin-top: 0.75rem; font-size: 12px; color: var(--gray-400);">Submit to: <a
+              href="mailto:sis.mun@stu.stonehill.in" style="color: var(--red);">sis.mun@stu.stonehill.in</a></p>
+        </div>
+
+        <div class="cp-sidebar-card" style="background: var(--red); border-color: var(--red);">
+          <h4 style="color: rgba(255,255,255,0.6);">Ready to join?</h4>
+          <p style="color: white; margin-bottom: 1rem;">Secure your delegation's spot at SISMUN 2026 today.</p>
+          <button onclick="showPage('register')"
+            style="width:100%; background: white; color: var(--red); border: none; padding: 10px; border-radius: 4px; font-family: 'DM Sans', sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 0.04em; cursor: pointer; text-transform: uppercase;">Register
+            Now</button>
+        </div>
+
+      </div>
+    </div>
+
+
   </div>
 
   <!-- ────────── AD HOC COMMITTEE PAGE ────────── -->
