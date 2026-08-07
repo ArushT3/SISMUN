@@ -650,12 +650,14 @@
       font-weight: 300;
     }
 
-    .page#page-bylaws .about-hero {
+    .page#page-bylaws .about-hero,
+    .page#page-rop .about-hero {
       display: block;
       grid-template-columns: unset;
     }
 
-    .page#page-bylaws .about-hero h1 {
+    .page#page-bylaws .about-hero h1,
+    .page#page-rop .about-hero h1 {
       white-space: nowrap;
       max-width: 100%;
     }
@@ -2249,6 +2251,7 @@
       <a onclick="showPage('home')" class="active" id="nav-home">Home</a>
       <a onclick="showPage('about')" id="nav-about">About</a>
       <a onclick="showPage('bylaws')" id="nav-bylaws">Bylaws</a>
+      <a onclick="showPage('rop')" id="nav-rop">ROP</a>
       <a onclick="showPage('accommodations')" id="nav-accommodations">Accommodations</a>
       <a onclick="showPage('committees')" id="nav-committees">Committees</a>
       <a onclick="showPage('register')" class="nav-cta" id="nav-register">Register</a>
@@ -2926,7 +2929,8 @@
       <div class="reg-form-wrap">
         <!-- Tabs -->
         <div class="reg-tabs">
-          <button class="reg-tab active" onclick="switchRegTab('delegates', this)">Delegate & Faculty Registration</button>
+          <button class="reg-tab active" onclick="switchRegTab('delegates', this)">Delegate & Faculty
+            Registration</button>
           <button class="reg-tab" onclick="switchRegTab('chairs', this)">Chair Application</button>
         </div>
 
@@ -4534,6 +4538,353 @@
 
   </div>
 
+  <!-- ────────── RULES OF PROCEDURE PAGE ────────── -->
+  <div class="page" id="page-rop">
+    <div class="about-hero" style="margin-bottom: 2rem;">
+      <h1>Rules of Procedure</h1>
+      <p>Governing procedure for SISMUN 2026's non-crisis committees — SOCHUM, WHO, IMO, and UNDP. This document may not
+        overrule the Bylaws or decisions made by the Secretariat.</p>
+    </div>
+
+    <div style="padding: 0 3rem 4rem;">
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>General Rules</h3>
+        <p><strong>Rule 1 — Language.</strong> The language of this conference and all committees covered under this
+          document is English. The use of any other language is strictly prohibited. Failure to comply will result in
+          disciplinary action according to the Bylaws.</p>
+        <p><strong>Rule 2 — Representation.</strong> Delegates will be assigned a country to represent. Every delegate
+          is expected to represent the beliefs of their country, regardless of personal opinion. All statements,
+          speeches, proposals, and votes are expected to portray the stance of the country the delegate is representing.
+        </p>
+        <p><strong>Rule 3 — Power of Chairs.</strong> Chairs have the power to follow procedure to the best of their
+          ability, including discretion to propose, reject, or accept motions. Delegates have the right to appeal chair
+          decisions through the appeal procedure below. If a delegate believes a chair is making a procedural error,
+          they may raise a Point of Order — though this is discouraged in favour of a polite Point of Parliamentary
+          Inquiry.</p>
+        <p><strong>Rule 4 — Electronic Devices & Artificial Intelligence.</strong> Use of electronic devices such as
+          phones, laptops, or tablets is at the discretion of the chairboard. The use of AI is permitted strictly for
+          research purposes only. Delegates caught using AI to deliver speeches or submit documents (draft resolutions,
+          working papers) will be punished according to the Bylaws.</p>
+        <p><strong>Rule 5 — Quorum.</strong> To begin a formal session, at least ⅔ of delegates must be present. If
+          quorum is not reached within 5 minutes of the scheduled time, the committee begins with the delegates present
+          in the room.</p>
+        <p><strong>Rule 6 — Appeal.</strong> If a chair uses discretion to change proceedings on a procedural matter,
+          any delegate may raise a motion to appeal, followed by a 30-second speech and a committee vote (½ + 1 to
+          pass). For substantive matters, the delegate is given 1 minute to explain the appeal, and passage requires a ⅔
+          majority. In both cases, a successful appeal voids the chair's change and reverts the committee to its prior
+          state.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Roll Call</h3>
+        <p>Roll call happens at the start of every session. When your portfolio is called, you may respond
+          <strong>Present</strong> (you may abstain on substantive votes) or <strong>Present and Voting</strong> (you
+          may not abstain on any vote). If you arrive late and miss roll call, send a message paper to the chair stating
+          your status. Missing more than ⅔ of a session limits you to observer status for that session — you may not
+          speak or vote.
+        </p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Yields</h3>
+        <p>After a speech, a delegate may yield remaining time in one of three ways:</p>
+        <ul>
+          <li><strong>Yield to questions</strong> — the chair selects delegates from the floor to ask questions; time
+            continues to run and questions are accepted until 5 seconds remain.</li>
+          <li><strong>Yield to the chairboard</strong> — the chair decides what to do with the remaining time.</li>
+          <li><strong>Yield to another delegate</strong> — the receiving delegate must accept; if accepted, the time is
+            added to their next speech. If declined, the original delegate must yield another way.</li>
+        </ul>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Opening Speeches</h3>
+        <p>Delivered after roll call, in alphabetical order, 60 seconds each. Delegates are advised (not bound) to
+          summarise their stance and proposed solutions. Points of Information and Points of Order are not accepted
+          during opening speeches, and remaining time may only be yielded to the chairboard.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>General Speakers List (GSL)</h3>
+        <p>Established after opening speeches via a motion to open the GSL. Delegates raise placards to be added. Chairs
+          have discretion over how many speakers are heard each time the committee reverts to the list. The committee
+          reverts to GSL via motion, and automatically at the start of every session.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Caucuses</h3>
+        <p><strong>Moderated Caucus.</strong> Established by a motion specifying topic, total time, and per-speaker
+          time. The chair sets a speakers list; delegates yield their time after speaking, and Points of Order are
+          allowed afterward.</p>
+        <p><strong>Semi-Moderated Caucus.</strong> Established by a motion specifying total time. Only one delegate
+          speaks at a time — the first to stand may speak without interruption and with no time limit, then sits and the
+          next delegate to stand speaks. Points are suspended.</p>
+        <p><strong>Unmoderated Caucus.</strong> Free debate with no chair moderation, established by motion for up to 20
+          minutes maximum. The only point or motion in order is a motion to terminate the caucus.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Points</h3>
+        <p><strong>Point of Personal Privilege</strong> — used for personal issues (e.g. asking to close a window), and
+          the only point that may interrupt a speaker, for volume or pace issues.</p>
+        <p><strong>Point of Information</strong> — used to question a delegate's speech when permitted by the chair,
+          e.g. asking for clarification on a controversial or ambiguous claim. A follow-up may be requested if the
+          answer doesn't resolve the doubt.</p>
+        <p><strong>Point of Order (Factual Inaccuracy)</strong> — raised when a delegate states something factually
+          incorrect; the delegate's exact words should be cited.</p>
+        <p><strong>Point of Order (Logical Fallacy)</strong> — raised when a delegate's statement is internally
+          contradictory or doesn't logically follow.</p>
+        <p><strong>Point of Order (to the Chair)</strong> — raised when the chair makes a procedural error.</p>
+        <p><strong>Point of Parliamentary Inquiry</strong> — used to ask the chair a question about the committee
+          itself.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Right to Reply</h3>
+        <p>Used when a delegate feels their state or head of state has been directly insulted by another delegate.
+          Submit a message paper to the chair in the following format:</p>
+        <ul>
+          <li>RIGHT TO REPLY — From: (Your Delegation), To: Chairboard</li>
+          <li>A brief explanation of how you were insulted</li>
+        </ul>
+        <p>If the chair determines the insult was genuine, you will be granted 1 minute to respond.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Draft Resolutions — Scope & Authority</h3>
+        <p>Draft resolutions conclude a committee's work and are inspected by the Secretariat before being tabled.
+          Authority differs by committee:</p>
+        <p><strong>SOCHUM</strong> — Resolutions are recommendatory, not legally binding. SOCHUM may call on states and
+          UN bodies to strengthen human rights protections, improve humanitarian assistance, promote equality, run
+          awareness campaigns, form working groups, or request reports. It cannot impose sanctions, authorise force,
+          establish peacekeeping operations, or compel domestic legal change.</p>
+        <p><strong>WHO</strong> — May coordinate international public health efforts: disease surveillance, emergency
+          medical response, expert deployment, health guidelines, vaccination campaigns, technical assistance. It cannot
+          mandate compliance, require vaccinations, close borders, or penalise states.</p>
+        <p><strong>IMO</strong> — May set or amend maritime safety, navigation, environmental, and security standards,
+          and coordinate search-and-rescue cooperation. It cannot authorise naval operations, seize vessels, arrest
+          pirates, or inspect ships without consent.</p>
+        <p><strong>UNDP</strong> — May fund and implement development initiatives: financial assistance, infrastructure
+          and poverty-reduction projects, technical expertise, institutional strengthening, disaster recovery. It cannot
+          compel participation, impose sanctions, or authorise military action.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Resolution Formatting</h3>
+        <p>A resolution has two parts. <strong>Preambulatory clauses</strong> state the reasoning behind committee
+          action — relevant precedent, past resolutions, prior international action — each beginning with an italicised
+          preambulatory phrase and ending in a semicolon. <strong>Operative clauses</strong> are numbered,
+          action-oriented, and also begin with an italicised operative phrase; subclauses need not start with an
+          operative phrase but should remain specific and action-oriented. A reference list of accepted clauses is
+          available at <a href="https://www.wisemee.com/preambulatory-and-operative-clauses/" target="_blank"
+            style="color:var(--red);">wisemee.com</a>.</p>
+        <p>Formatting requirements: Times New Roman, size 12, 1.5 line spacing. The first use of an abbreviation must be
+          preceded by its full form in parentheses (e.g. UNSC (United Nations Security Council)); the short form may be
+          used thereafter. The use of AI when writing resolutions is strictly prohibited, as is any pre-written material
+          or material drafted outside formal sessions — violations are punished according to the Bylaws.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Sponsors, Signatories & Submission</h3>
+        <ul>
+          <li>Each resolution needs at least 1 sponsor (maximum 3) and at least ⅓ of delegates as signatories</li>
+          <li>Being a signatory does not imply support — it only means you wish to see the resolution discussed</li>
+          <li>No limit on the number of signatories</li>
+          <li>Sponsors and signatories must be listed alphabetically</li>
+          <li>A committee may table a maximum of 3 resolutions; if more are submitted, the first three received by the
+            Secretariat (via the chairs) are eligible</li>
+        </ul>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Introducing & Discussing a Resolution</h3>
+        <p>Once approved by the Secretariat, a resolution is introduced via a motion to introduce a draft resolution —
+          no vote required, accepted at the chair's discretion. The resolution with the most signatories is introduced
+          first. A sponsor reads the operative clauses aloud while a digital copy is shared with the committee. Each
+          delegate is then permitted exactly one question about the resolution; follow-up questions are not in order.
+        </p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Amendments</h3>
+        <p><strong>Friendly amendments</strong> may be proposed only by sponsors and are added to the resolution
+          automatically. An unfriendly amendment may become friendly if all sponsors unanimously agree.</p>
+        <p><strong>Unfriendly amendments</strong> may be proposed by any delegate. The proposer is given 3 minutes to
+          explain the amendment (yielding to questions is suggested), followed by one against speech from any delegate.
+          The amendment then requires ½ + 1 to pass.</p>
+      </div>
+
+      <div class="cp-card" style="margin-bottom: 1.5rem;">
+        <h3>Voting on the Resolution</h3>
+        <p>Conducted by roll call in alphabetical order. Delegates may respond <strong>Yes</strong>,
+          <strong>No</strong>, <strong>Abstain</strong>, or <strong>Skip</strong> (usable once, to vote after seeing
+          others). Delegates who answered Present and Voting at roll call may not abstain. If the resolution passes, the
+          only motion in order is to adjourn the committee. If it fails, the floor reopens to motions — typically to
+          adjourn or to introduce another resolution.
+        </p>
+      </div>
+
+      <div class="cp-card">
+        <h3>Example Resolution</h3>
+        <p style="margin-bottom:1.25rem;">This is the only resolution format accepted by the Secretariat at SISMUN 2026
+          — use it as your template.</p>
+        <div
+          style="background:var(--gray-100); border-radius:6px; padding:1.75rem; font-size:13px; line-height:1.85; color:var(--gray-700);">
+          <p><strong>Council:</strong> The United Nations Security Council</p>
+          <p><strong>Agenda Item:</strong> Question of Establishing the Ethics of a Possible UN Military Force</p>
+          <p><strong>Sponsors:</strong> Islamic Republic of Iran, Russian Federation, People's Republic of China</p>
+          <p style="margin-bottom:1rem;"><strong>Signatories:</strong> Democratic People's Republic of Korea, Japan,
+            Republic of Austria, Republic of Türkiye, the French Republic, the State of Israel, the United Kingdom of
+            Great Britain and Northern Ireland, the United States of America, Ukraine, Swiss Confederation</p>
+
+          <p style="margin-top:1rem;"><em>The Security Council;</em></p>
+          <p><em>Recalling</em> the purposes and principles of the Charter of the United Nations (UN Charter);</p>
+          <p><em>Recognizing</em> that the United Nations (UN) is an intergovernmental organization, not a supranational
+            authority;</p>
+          <p><em>Acknowledging</em> the long-standing principles of UN peacekeeping, namely consent of the parties,
+            impartiality, and the non-use of force except in self-defense or defense of the mandate;</p>
+          <p><em>Noting with concern</em> that the establishment of a permanent or standing UN military force raises
+            unresolved ethical, legal, and accountability challenges, including command authority, political neutrality,
+            and responsibility for violations;</p>
+          <p><em>Emphasizing</em> that any use of force by the United Nations must remain exceptional, proportional, and
+            strictly authorized on a case-by-case basis;</p>
+          <p><em>Recognizing</em> the substantial contributions of Member States to UN peacekeeping operations,
+            including troop-contributing countries that place national forces under UN mandates while retaining
+            sovereign command responsibilities;</p>
+          <p><em>Concerned</em> that permanent militarization of the United Nations could undermine trust among Member
+            States, particularly developing countries;</p>
+          <p><em>Acknowledging</em> the importance of strengthening existing peacekeeping mechanisms rather than
+            duplicating or replacing them with new military structures;</p>
+          <p><em>Recognizing</em> the need for enhanced financial transparency, equitable burden-sharing, and
+            accountability in peacekeeping operations;</p>
+          <p><em>Affirming</em> that international peace and security are best sustained through political dialogue,
+            diplomacy, development, and multilateral cooperation, rather than permanent armed enforcement mechanisms;
+          </p>
+          <p><em>Recalling</em> the resolution regarding contribution levels to the operations of the United Nations,
+            specifically resolution A/RES/55/235;</p>
+          <p style="margin-bottom:1rem;"><em>Determined</em> to ensure that any future reforms to United Nations
+            peacekeeping structures fully comply with the UN Charter and the constitutional frameworks of Member States;
+          </p>
+
+          <p><em>1. Reaffirms</em> that the maintenance of international peace must be in full compliance with the
+            purposes and principles of the UN Charter, particularly Articles 2/1, 2/4, 2/7, emphasizing sovereign
+            equality of all states and the prohibition of interference in matters falling under domestic jurisdiction,
+            such as:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. underlining the importance of state sovereignty and believing that every country has the right to
+              control its own internal affairs,</li>
+            <li>b. believing that a United Nations military force could violate the principle of state sovereignty
+              without the permission of the state;</li>
+          </ul>
+
+          <p><em>2. Confirms</em> that the International Court of Justice:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. may not adjudicate the United Nations Security Council in any case or scenario,</li>
+            <li>b. is a strictly advisory judicial body of the United Nations;</li>
+          </ul>
+
+          <p><em>3. Encourages</em> enhanced oversight and accountability mechanisms through:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. periodic reporting to the General Assembly,</li>
+            <li>b. legal norm review by the International Court of Justice when appropriate pursuant to operative clause
+              2,</li>
+            <li>c. the issuance of advisory opinions upon the request of the competent UN bodies regarding alleged
+              violations of the mandate set by the Security Council,</li>
+            <li>d. the clarification of peacekeeping mandates when found ambiguous,</li>
+            <li>e. strongly supporting the strengthening and reform of existing UN mechanisms through their respective
+              board meetings and reporting to the UNSC and General Assembly for improvements beyond their authority,
+              including: United Nations Peacekeeping Operations (UNPBO), the Department of Peace Operations (DPO), and
+              Political and Peacebuilding Missions;</li>
+          </ul>
+
+          <p><em>4. Further depicts</em> the Peacekeeping Operations sub-organ of the Security Council to ensure that no
+            UN peacekeeping mission or operation is authorized without:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. clear and limited mandates,</li>
+            <li>b. explicit objectives and timelines,</li>
+            <li>c. regular review and renewal by the Security Council;</li>
+          </ul>
+
+          <p><em>5. Reminds</em> that all queries regarding interpretation of the UN Charter should be answered by the
+            advisory opinion of the International Court of Justice (ICJ);</p>
+
+          <p><em>6. Requests</em> regional cooperation instead of an international United Nations military force by:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. congratulating regional organisations such as the Arab League and ASEAN for supporting and using
+              regional cooperation appropriately,</li>
+            <li>b. welcoming future initiatives from new regional cooperative organisations if established;</li>
+          </ul>
+
+          <p><em>7. Emphasizes</em> that all future peacekeeping operations shall continue to be approved by the UNSC on
+            a strict case-by-case basis by:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. noting with gratitude the belief that the ICJ's mandate should be fair, to avoid repeating issues
+              like the Iraq War (2003) and the Libyan Intervention (2011),</li>
+            <li>b. ensuring diplomacy is prioritized, with military force as a last resort, as outlined in Article 2/3
+              of the UN Charter;</li>
+          </ul>
+
+          <p><em>8. Invites</em> the Department of Peace Operations (DPO) to resolve bureaucratic predicaments via
+            improving conditions regarding:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. housing and shelter for peacekeeping forces,</li>
+            <li>b. quality of nutrition provided to peacekeeping forces,</li>
+            <li>c. medical care for injured peacekeeping forces,</li>
+            <li>d. training of peacekeeping forces regarding the mandate set by the UNSC,</li>
+            <li>e. logistics of peacekeeping operations;</li>
+          </ul>
+
+          <p><em>9. Calls for</em> the revision of the UN Peacekeeping budget by the Fifth Committee of the General
+            Assembly to ensure:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. equal burden sharing based on capacity to pay, as highlighted by resolution A/RES/55/235 Annexure-1,
+            </li>
+            <li>b. realistic and future-legitimized funding mechanisms,</li>
+            <li>c. increased transparency regarding expenditures;</li>
+          </ul>
+
+          <p><em>10. Encourages</em> voluntary contributions from member states to UN Peacekeeping operations,
+            particularly from developed countries — specifically countries in levels A and B as mentioned in resolution
+            A/RES/55/235 — with particular welcome for:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. voluntary provision of personnel and specialised training,</li>
+            <li>b. in-kind contributions, including equipment, medical support, and transportation resources;</li>
+          </ul>
+
+          <p><em>11. Reiterates</em> the UN Secretary-General's annual reports on peacekeeping cost efficiency and
+            anti-corruption measures to detect:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. the possible misuse of funds, which could undermine the ethical integrity of operations,</li>
+            <li>b. requests the Fifth Committee of the UN General Assembly to review submitted reports and report any
+              found corruption to the Office of Internal Oversight Services;</li>
+          </ul>
+
+          <p><em>12. Decides</em> to establish a United Nations Fact-Finding Mission led by the Special Committee on
+            Peacekeeping Operations, with consultation available from the Military Staff Committee, to find and report
+            any violations of the mandate set by the UNSC regarding the goals, tasks, and limits of the respective
+            peacekeeping operation. The Fact-Finding Mission shall report findings of violations to:</p>
+          <ul style="margin:0.5rem 0 1rem 1.5rem;">
+            <li>a. the United Nations Security Council,</li>
+            <li>b. the Secretary-General,</li>
+            <li>c. the International Court of Justice;</li>
+          </ul>
+
+          <p><em>13. Calls upon</em> all member states of the UN Security Council to reassess agendas for UNSC meetings
+            upon receiving a report from the Fact-Finding Mission, to include discussion of the report and a possible
+            punishment for the violator;</p>
+
+          <p><em>14. Strongly advises</em> the United Nations General Assembly to commence discussions of amendment
+            procedures to the current Charter, to add an article along the lines of the following statement: "The United
+            Nations will never have a permanent standing military force";</p>
+
+          <p style="margin-bottom:0;"><em>15. Decides</em> to remain actively seized of the matter.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ────────── ACCOMMODATIONS PAGE ────────── -->
   <div class="page" id="page-accommodations">
     <div class="accom-hero">
@@ -4596,6 +4947,7 @@
       <a onclick="showPage('home')">Home</a>
       <a onclick="showPage('about')">About</a>
       <a onclick="showPage('bylaws')" id="nav-bylaws">Bylaws</a>
+      <a onclick="showPage('rop')" id="nav-rop">ROP</a>
       <a onclick="showPage('accommodations')" id="nav-accommodations">Accommodations</a>
       <a onclick="showPage('committees')">Committees</a>
       <a onclick="showPage('register')" id="nav-register">Register</a>
