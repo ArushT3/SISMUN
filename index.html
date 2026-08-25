@@ -1515,16 +1515,16 @@
     }
 
     footer .footer-institution-logo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0rem;
-}
+      display: flex;
+      justify-content: center;
+      margin-bottom: 0rem;
+    }
 
-footer .footer-institution-logo img {
-  height: 115px;
-  width: auto;
-  display: block;
-}
+    footer .footer-institution-logo img {
+      height: 115px;
+      width: auto;
+      display: block;
+    }
 
     /* ANIMATIONS */
     @keyframes fadeUp {
@@ -2164,6 +2164,104 @@ footer .footer-institution-logo img {
       color: var(--red);
     }
 
+    .schedule-tabs {
+      display: flex;
+      gap: 0;
+      border-bottom: 2px solid var(--gray-200);
+      margin-bottom: 2rem;
+    }
+
+    .schedule-tab {
+      background: none;
+      border: none;
+      padding: 0.85rem 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gray-400);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+
+    .schedule-tab:hover {
+      color: var(--gray-900);
+    }
+
+    .schedule-tab.active {
+      color: var(--red);
+      border-bottom-color: var(--red);
+      font-weight: 600;
+    }
+
+    .schedule-tab-content {
+      display: none;
+    }
+
+    .schedule-tab-content.active {
+      display: block;
+    }
+
+    .schedule-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.5rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--gray-100);
+    }
+
+    .schedule-row:last-child {
+      border-bottom: none;
+    }
+
+    .schedule-time {
+      flex-shrink: 0;
+      width: 150px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--red);
+      letter-spacing: 0.02em;
+    }
+
+    .schedule-event {
+      font-size: 14px;
+      color: var(--gray-900);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .schedule-note {
+      background: var(--red-pale);
+      border: 1px solid rgba(192, 39, 45, 0.15);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      font-size: 13px;
+      color: var(--gray-700);
+      line-height: 1.7;
+      margin-bottom: 2rem;
+    }
+
+    .schedule-note strong {
+      color: var(--red);
+    }
+
+    @media (max-width: 768px) {
+      .schedule-row {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+
+      .schedule-time {
+        width: auto;
+      }
+
+      .schedule-tab {
+        padding: 0.75rem 1rem;
+        font-size: 13px;
+      }
+    }
+
     @media (max-width: 768px) {
       .hotel-body {
         grid-template-columns: 1fr;
@@ -2264,6 +2362,7 @@ footer .footer-institution-logo img {
       <a onclick="showPage('about')" id="nav-about">About</a>
       <a onclick="showPage('bylaws')" id="nav-bylaws">Bylaws</a>
       <a onclick="showPage('rop')" id="nav-rop">ROP</a>
+      <a onclick="showPage('schedule')" id="nav-schedule">Schedule</a>
       <a onclick="showPage('accommodations')" id="nav-accommodations">Accommodations</a>
       <a onclick="showPage('committees')" id="nav-committees">Committees</a>
       <a onclick="showPage('register')" class="nav-cta" id="nav-register">Register</a>
@@ -2369,7 +2468,8 @@ footer .footer-institution-logo img {
             </svg>
           </div>
           <h3>Awards</h3>
-          <p>Best Delegate, Best Delegation, Outstanding Delegate, Verbal Mention, Honorable Mention, and Best Position Paper awards across
+          <p>Best Delegate, Best Delegation, Outstanding Delegate, Verbal Mention, Honorable Mention, and Best Position
+            Paper awards across
             all committees.
           </p>
         </div>
@@ -4897,6 +4997,169 @@ footer .footer-institution-logo img {
     </div>
   </div>
 
+  <!-- ────────── SCHEDULE PAGE ────────── -->
+  <div class="page" id="page-schedule">
+    <div class="about-hero">
+      <h1>Conference Schedule</h1>
+      <p>The day-by-day timeline for SISMUN 2026, from registration on Day 1 through the closing ceremony on Day 3. All
+        times are in IST and subject to minor changes closer to the conference.</p>
+    </div>
+
+    <div style="padding: 3rem 3rem 5rem;">
+
+      <div class="schedule-tabs">
+        <button class="schedule-tab active" onclick="switchScheduleTab('day1', this)">Day 1 — 25 Sept</button>
+        <button class="schedule-tab" onclick="switchScheduleTab('day2', this)">Day 2 — 26 Sept</button>
+        <button class="schedule-tab" onclick="switchScheduleTab('day3', this)">Day 3 — 27 Sept</button>
+      </div>
+
+      <!-- DAY 1 -->
+      <div class="schedule-tab-content active" id="schedule-tab-day1">
+        <div class="cp-card">
+          <h3>Day 1 — Opening Day</h3>
+          <div class="schedule-row">
+            <div class="schedule-time">7:30 – 8:30</div>
+            <div class="schedule-event">Registration</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">8:45 – 9:00</div>
+            <div class="schedule-event">Move to ceremony venue</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">9:00 – 10:00</div>
+            <div class="schedule-event">Opening Ceremony</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:00 – 10:15</div>
+            <div class="schedule-event">Break / move to committee rooms</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:15 – 10:30</div>
+            <div class="schedule-event">Morning snacks</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:30 – 12:00</div>
+            <div class="schedule-event">Committee Session I</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">12:00 – 12:15</div>
+            <div class="schedule-event">Short break</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">12:15 – 1:45</div>
+            <div class="schedule-event">Committee Session II</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">1:45 – 2:30</div>
+            <div class="schedule-event">Lunch</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">2:30 – 3:15</div>
+            <div class="schedule-event">Committee Session III</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">3:15 – 3:30</div>
+            <div class="schedule-event">Afternoon snacks</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">3:30 – 4:00</div>
+            <div class="schedule-event">Committee Session III (cont.)</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">4:00</div>
+            <div class="schedule-event">Dispersal</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 2 -->
+      <div class="schedule-tab-content" id="schedule-tab-day2">
+        <div class="schedule-note"><strong>Formal attire required</strong> for DJ Night this evening.</div>
+        <div class="cp-card">
+          <h3>Day 2 — Committee & Social</h3>
+          <div class="schedule-row">
+            <div class="schedule-time">7:30 – 8:30</div>
+            <div class="schedule-event">Registration</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">8:30 – 10:00</div>
+            <div class="schedule-event">Committee Session IV</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:00 – 10:15</div>
+            <div class="schedule-event">Break</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:15 – 10:30</div>
+            <div class="schedule-event">Morning snacks</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:30 – 12:00</div>
+            <div class="schedule-event">Committee Session V</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">12:00 – 12:45</div>
+            <div class="schedule-event">Lunch</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">12:45 – 2:15</div>
+            <div class="schedule-event">Committee Session VI</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">2:15 – 2:30</div>
+            <div class="schedule-event">Afternoon snacks</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">2:30 – 4:00</div>
+            <div class="schedule-event">Committee Session VII</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">4:00 – 4:15</div>
+            <div class="schedule-event">Move to event space</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">4:15 – 6:30</div>
+            <div class="schedule-event">DJ Night (social event, formal attire)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DAY 3 -->
+      <div class="schedule-tab-content" id="schedule-tab-day3">
+        <div class="schedule-note"><strong>Half day, no lunch provided.</strong> Final committee session includes voting
+          on resolutions.</div>
+        <div class="cp-card">
+          <h3>Day 3 — Closing Day</h3>
+          <div class="schedule-row">
+            <div class="schedule-time">7:00 – 7:45</div>
+            <div class="schedule-event">Registration</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">7:45 – 8:00</div>
+            <div class="schedule-event">Morning snacks</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">8:00 – 10:00</div>
+            <div class="schedule-event">Final Committee Session (voting on resolutions)</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:00 – 10:15</div>
+            <div class="schedule-event">Break, move to closing venue</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">10:15 – 11:30</div>
+            <div class="schedule-event">Closing Ceremony (awards, best delegate announcements)</div>
+          </div>
+          <div class="schedule-row">
+            <div class="schedule-time">11:30 – 12:00</div>
+            <div class="schedule-event">Farewell / group photos</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
   <!-- ────────── ACCOMMODATIONS PAGE ────────── -->
   <div class="page" id="page-accommodations">
     <div class="accom-hero">
@@ -4954,13 +5217,14 @@ footer .footer-institution-logo img {
 
   <footer>
     <div class="footer-institution-logo">
-  <img src="images/sislogo.png" alt="Stonehill International School logo">
-</div>
+      <img src="images/sislogo.png" alt="Stonehill International School logo">
+    </div>
     <div class="f-links">
       <a onclick="showPage('home')">Home</a>
       <a onclick="showPage('about')">About</a>
       <a onclick="showPage('bylaws')" id="nav-bylaws">Bylaws</a>
       <a onclick="showPage('rop')" id="nav-rop">ROP</a>
+      <a onclick="showPage('schedule')" id="nav-schedule">Schedule</a>
       <a onclick="showPage('accommodations')" id="nav-accommodations">Accommodations</a>
       <a onclick="showPage('committees')">Committees</a>
       <a onclick="showPage('register')" id="nav-register">Register</a>
@@ -4989,6 +5253,13 @@ footer .footer-institution-logo img {
       document.querySelectorAll('.reg-tab-content').forEach(t => t.classList.remove('active'));
       document.querySelectorAll('.reg-tab').forEach(t => t.classList.remove('active'));
       document.getElementById('reg-tab-' + tab).classList.add('active');
+      el.classList.add('active');
+    }
+
+    function switchScheduleTab(day, el) {
+      document.querySelectorAll('.schedule-tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.schedule-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('schedule-tab-' + day).classList.add('active');
       el.classList.add('active');
     }
 
